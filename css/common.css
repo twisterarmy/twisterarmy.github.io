@@ -1,0 +1,237 @@
+/* common */
+
+* {
+  padding: 0;
+  margin: 0;
+  position: relative
+}
+
+body {
+  font-family: Roboto-Regular, Sans-Serif, Verdana;
+  font-size: 14px
+}
+
+a, a:hover {
+  text-decoration: none
+}
+
+/* backgrounds */
+.bg-logo-1 {
+  background-image: url('/image/logo-1.png');
+  background-repeat: no-repeat;
+  background-position: left 2px;
+  background-size: 24px
+}
+
+.bg-logo-1:hover {
+  background-image: url('/image/logo-0.png');
+}
+
+
+.bg-c-0 {
+  background-color: #FFF
+}
+
+.bg-c-1 {
+  background-color: #4A5466
+}
+
+.bg-c-2 {
+  background-color: #111
+}
+
+.bg-c-3 {
+  background-color: #596374
+}
+
+.bg-img-1 {
+  background-image: url('/image/bg-1.png')
+}
+
+.bg-img-2 {
+  background-image: url('/image/bg-2.png')
+}
+
+/* fonts */
+.t-center {
+  text-align: center
+}
+
+.t-right {
+  text-align: right
+}
+
+.t-left {
+  text-align: left
+}
+
+.f-size-18 {
+  font-size: 18px
+}
+
+.f-size-20 {
+  font-size: 20px
+}
+
+.f-size-26 {
+  font-size: 26px
+}
+
+.f-normal {
+  font-weight: normal
+}
+
+.lh-48 {
+  line-height: 48px
+}
+
+/* links */
+.c-0,
+a.c-0:active,
+a.c-0:visited,
+a.c-0:hover {
+  color: #fff
+}
+
+.c-1,
+a.c-1:active,
+a.c-1:visited {
+  color: #96a0b4
+}
+
+a.c-1:hover {
+  color: #fff
+}
+
+.c-2,
+a.c-2:active,
+a.c-2:visited {
+  color: #9ba5af
+}
+
+a.c-2:hover {
+  color: #fff
+}
+
+/* dimensions */
+.w-33-100 {
+  width: 33%
+}
+
+.h-28 {
+  height: 28px
+}
+
+.h-48 {
+  height: 48px
+}
+
+.h-100 {
+  height: 100px
+}
+
+/* paddings */
+.mw-1024 {
+  max-width: 1024px
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto
+}
+
+.my-100 {
+  margin-top: 100px;
+  margin-bottom: 100px
+}
+
+.mr-6 {
+  margin-right: 6px
+}
+
+.ml-16 {
+  margin-left: 16px
+}
+
+.mb-16 {
+  margin-bottom: 16px
+}
+
+.mb-22 {
+  margin-bottom: 22px
+}
+
+.mb-36 {
+  margin-bottom: 48px
+}
+
+.p-16 {
+  padding: 16px
+}
+
+.pb-10 {
+  padding-bottom: 10px
+}
+
+.pl-26 {
+  padding-left: 28px
+}
+
+.px-16 {
+  padding-left: 16px;
+  padding-right: 16px
+}
+
+/* positioning */
+.d-inline-block {
+  display: inline-block
+}
+
+.float-left {
+  float: left
+}
+
+.float-right {
+  float: right
+}
+
+.of-hidden {
+  overflow: hidden
+}
+
+/* buttons */
+.btn {
+  font-family: Roboto-Regular;
+  padding: 10px 16px;
+  border-radius: 4px
+}
+
+.btn-1 {
+  color: #fff;
+  border: 1px #2e6da4 solid;
+  background-color: #337ab7
+}
+
+.btn-1:hover {
+  background-color: #286090;
+  border-color: #204d74
+}
+
+/* borders */
+.b-radius-4 {
+  border-radius: 4px
+}
+
+.b-1 {
+  border-width: 1px;
+  border-style: solid
+}
+
+.bb-1 {
+  border-bottom-width: 1px;
+  border-bottom-style: solid
+}
+
+.b-c-0 {
+  border-color: #fff
+}
