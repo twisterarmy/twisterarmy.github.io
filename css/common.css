@@ -44,6 +44,14 @@ a, a:hover {
   background-color: #596374
 }
 
+.bg-c-101 {
+  background-color: #596a74 /* branding namespace reserved from 100-199 */
+}
+
+.bg-c-102 {
+  background-color: #5e5974 /* branding namespace reserved from 100-199 */
+}
+
 .bg-img-1 {
   background-image: url('/image/bg-1.png')
 }
@@ -63,6 +71,10 @@ a, a:hover {
 
 .t-left {
   text-align: left
+}
+
+.f-size-16 {
+  font-size: 16px
 }
 
 .f-size-18 {
@@ -113,6 +125,16 @@ a.c-2:hover {
   color: #fff
 }
 
+.c-3,
+a.c-3:active,
+a.c-3:visited {
+  color: #becae0
+}
+
+a.c-3:hover {
+  color: #fff
+}
+
 /* dimensions */
 .w-33-100 {
   width: 33%
@@ -131,6 +153,9 @@ a.c-2:hover {
 }
 
 /* paddings */
+.mw-680 {
+  max-width: 680px
+}
 .mw-1024 {
   max-width: 1024px
 }
@@ -138,6 +163,16 @@ a.c-2:hover {
 .mx-auto {
   margin-left: auto;
   margin-right: auto
+}
+
+.my-36 {
+  margin-top: 36px;
+  margin-bottom: 36px
+}
+
+.my-48 {
+  margin-top: 48px;
+  margin-bottom: 48px
 }
 
 .my-100 {
@@ -183,6 +218,10 @@ a.c-2:hover {
 }
 
 /* positioning */
+.o-h {
+  overflow: hidden
+}
+
 .d-inline-block {
   display: inline-block
 }
@@ -218,13 +257,18 @@ a.c-2:hover {
 }
 
 /* borders */
-.b-radius-4 {
-  border-radius: 4px
+.b-r-3 {
+  border-radius: 3px
 }
 
 .b-1 {
   border-width: 1px;
   border-style: solid
+}
+
+.b-2 {
+  border-width: 1px;
+  border-style: dashed
 }
 
 .bb-1 {
@@ -234,4 +278,20 @@ a.c-2:hover {
 
 .b-c-0 {
   border-color: #fff
+}
+
+.b-c-4 {
+  border-color: #ccc
+}
+
+.b-c-101 { /* branding namespace reserved from 100-199 */
+  border-color: #c7ffe9
+}
+
+.b-c-102 { /* branding namespace reserved from 100-199 */
+  border-color: #dd92e4;
+}
+
+.b-c-103 { /* branding namespace reserved from 100-199 */
+  border-color: #9bb6da;
 }
