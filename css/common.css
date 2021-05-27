@@ -135,6 +135,16 @@ a.c-3:hover {
   color: #fff
 }
 
+.c-4,
+a.c-4:active,
+a.c-4:visited {
+  color: #fdebd7
+}
+
+a.c-4:hover {
+  color: #fff
+}
+
 /* dimensions */
 .w-33-100 {
   width: 33%
@@ -282,6 +292,10 @@ a.c-3:hover {
 
 .b-c-4 {
   border-color: #ccc
+}
+
+.b-c-5 {
+  border-color: #b9aa96
 }
 
 .b-c-101 { /* branding namespace reserved from 100-199 */
