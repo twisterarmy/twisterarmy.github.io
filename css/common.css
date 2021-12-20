@@ -15,6 +15,10 @@ a, a:hover {
   text-decoration: none
 }
 
+table {
+  border-spacing: 0
+}
+
 /* backgrounds */
 .bg-logo-1 {
   background-image: url('/image/logo-1.png');
@@ -145,9 +149,29 @@ a.c-4:hover {
   color: #fff
 }
 
+.c-5 {
+  color: #ce3e3e
+}
+
+.c-6 {
+  color: #ddab22
+}
+
+.c-7 {
+  color: #44c508
+}
+
 /* dimensions */
+.w-100-100 {
+  width: 100%
+}
+
 .w-33-100 {
   width: 33%
+}
+
+.w-50-100 {
+  width: 50%
 }
 
 .h-28 {
@@ -163,9 +187,11 @@ a.c-4:hover {
 }
 
 /* paddings */
+
 .mw-680 {
   max-width: 680px
 }
+
 .mw-1024 {
   max-width: 1024px
 }
@@ -173,6 +199,11 @@ a.c-4:hover {
 .mx-auto {
   margin-left: auto;
   margin-right: auto
+}
+
+.mx-16 {
+  margin-left: 16px;
+  margin-right: 16px
 }
 
 .my-36 {
@@ -188,6 +219,26 @@ a.c-4:hover {
 .my-100 {
   margin-top: 100px;
   margin-bottom: 100px
+}
+
+.mt-100 {
+  margin-top: 100px
+}
+
+.mt-10 {
+  margin-top: 10px
+}
+
+.mt-20 {
+  margin-top: 20px
+}
+
+.mt-24 {
+  margin-top: 24px
+}
+
+.mt-48 {
+  margin-top: 48px
 }
 
 .mr-6 {
@@ -210,16 +261,28 @@ a.c-4:hover {
   margin-bottom: 48px
 }
 
+.p-8 {
+  padding: 8px
+}
+
 .p-16 {
   padding: 16px
+}
+
+.pt-16 {
+  padding-top: 16px
 }
 
 .pb-10 {
   padding-bottom: 10px
 }
 
-.pl-26 {
-  padding-left: 28px
+.pb-20 {
+  padding-bottom: 20px
+}
+
+.pb-36 {
+  padding-bottom: 36px
 }
 
 .px-16 {
@@ -286,6 +349,17 @@ a.c-4:hover {
   border-bottom-style: solid
 }
 
+
+.bb-1-2 {
+  border-bottom-width: 1px;
+  border-bottom-style: dashed
+}
+
+.bb-2 {
+  border-bottom-width: 2px;
+  border-bottom-style: solid
+}
+
 .b-c-0 {
   border-color: #fff
 }
@@ -296,6 +370,10 @@ a.c-4:hover {
 
 .b-c-5 {
   border-color: #b9aa96
+}
+
+.b-c-6 {
+  border-color: #4A5466
 }
 
 .b-c-101 { /* branding namespace reserved from 100-199 */

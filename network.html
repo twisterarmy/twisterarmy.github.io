@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Twisterarmy - Network Status</title>
+  <link rel="stylesheet" type="text/css" href="/css/font.css" />
+  <link rel="stylesheet" type="text/css" href="/css/bi.css" />
+  <link rel="stylesheet" type="text/css" href="/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="/css/mobile.css" />
+  <script src="/js/jquery.js" type="text/javascript"></script>
+  <script src="/js/jquery.vmap.js" type="text/javascript" ></script>
+  <script src="/js/jquery.vmap.world.js" type="text/javascript"></script>
+  <script src="/js/network.js" type="text/javascript"></script>
+</head>
+<body class="bg-c-1 bg-img-1 c-0">
+  <div class="bg-c-2 bg-img-2 c-1 of-hidden">
+    <div class="mw-1024 mx-auto">
+      <div class="nav float-left h-48 lh-48">
+        <div class="px-16">
+          <a class="c-1 f-size-18" href="/">Twisterarmy <i>Gateway</i></a>
+        </div>
+      </div>
+      <div class="nav bg-c-2 bg-img-2 float-right t-right h-48 lh-48">
+        <div class="px-16">
+          <a class="c-1 ml-16" href="/"><i class="bi-house-door mr-6"></i>Home</a>
+          <a class="c-1 ml-16" href="/install.html"><i class="bi-download mr-6"></i>Install</a>
+          <span class="c-0 ml-16"><i class="bi-server mr-6"></i>Network</span>
+          <!-- todo
+          <a class="c-1 ml-16" href="#"><i class="bi-tv mr-6"></i>Features</a>
+          <a class="c-1 ml-16" href="#"><i class="bi-info-circle mr-6"></i>Docs</a>
+          <a class="c-1 ml-16" href="#"><i class="bi-wallet mr-6"></i>Fundation</a>
+          <a class="c-1 ml-16" href="#"><i class="bi-pie-chart mr-6"></i>Statute</a>
+          -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mw-1024 mx-auto of-hidden">
+    <div class="mx-16">
+      <h1 class="f-size-26 my-48 pb-36 pt-16 t-center f-normal bb-1-2 b-c-0">Network Status</h1>
+      <h2 class="f-size-20 mt-48 pb-10 f-normal t-center">Service Nodes</h2>
+      <div class="mx-auto mt-20 bg-c-3 b-r-3 b-c-0 b-1">
+        <table class="w-100-100">
+          <tr>
+            <th class="t-center bb-2 b-c-6 p-16">Status</th>
+            <th class="t-left pl-26 bb-2 b-c-6 p-16">DNS Seed</th>
+            <th class="t-center bb-2 b-c-6 p-16">Peers</th>
+            <th class="t-center bb-2 b-c-6 p-16">Location</th>
+          </tr>
+          <tr data-host="seed.twister.net.co">
+            <td class="t-center bb-2 b-c-6 p-8"><i class="bi-info-circle mr-6 f-size-26 p-16 c-5"></i></td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">seed.twister.net.co</td>
+            <td class="t-center bb-2 b-c-6 p-8">0</td>
+            <td class="t-center bb-2 b-c-6 p-8">-</td>
+          </tr>
+          <tr data-host="seed2.twister.net.co">
+            <td class="t-center bb-2 b-c-6 p-8"><i class="bi-info-circle mr-6 f-size-26 p-16 c-5"></i></td>
+            <td class="t-left bb-2 b-c-6 pl-26 p-8">seed2.twister.net.co</td>
+            <td class="t-center bb-2 b-c-6 p-8">0</td>
+            <td class="t-center bb-2 b-c-6 p-8">-</td>
+          </tr>
+          <tr data-host="seed3.twister.net.co">
+            <td class="t-center bb-2 b-c-6 p-8"><i class="bi-info-circle mr-6 f-size-26 p-16 c-5"></i></td>
+            <td class="t-left bb-2 b-c-6 pl-26 p-8">seed3.twister.net.co</td>
+            <td class="t-center bb-2 b-c-6 p-8">0</td>
+            <td class="t-center bb-2 b-c-6 p-8">-</td>
+          </tr>
+          <tr data-host="dnsseed.gombadi.com">
+            <td class="t-center bb-2 b-c-6 p-8"><i class="bi-info-circle mr-6 f-size-26 p-16 c-5"></i></td>
+            <td class="t-left bb-2 b-c-6 pl-26 p-8">dnsseed.gombadi.com</td>
+            <td class="t-center bb-2 b-c-6 p-8">0</td>
+            <td class="t-center bb-2 b-c-6 p-8">-</td>
+          </tr>
+          <tr data-host="twisterseed.tk">
+            <td class="t-center bb-2 b-c-6 p-8"><i class="bi-info-circle mr-6 f-size-26 p-16 c-5"></i></td>
+            <td class="t-left bb-2 b-c-6 pl-26 p-8">twisterseed.tk</td>
+            <td class="t-center bb-2 b-c-6 p-8">0</td>
+            <td class="t-center bb-2 b-c-6 p-8">-</td>
+          </tr>
+          <tr data-host="cruller.tasty.sexy">
+            <td class="t-center bb-2 b-c-6 p-8"><i class="bi-info-circle mr-6 f-size-26 p-16 c-5"></i></td>
+            <td class="t-left bb-2 b-c-6 pl-26 p-8">cruller.tasty.sexy</td>
+            <td class="t-center bb-2 b-c-6 p-8">0</td>
+            <td class="t-center bb-2 b-c-6 p-8">-</td>
+          </tr>
+          <tr data-host="twister-seeder.muh.freedu.ms">
+            <td class="t-center bb-2 b-c-6 p-8"><i class="bi-info-circle mr-6 f-size-26 p-16 c-5"></i></td>
+            <td class="t-left bb-2 b-c-6 pl-26 p-8">twister-seeder.muh.freedu.ms</td>
+            <td class="t-center bb-2 b-c-6 p-8">0</td>
+            <td class="t-center bb-2 b-c-6 p-8">-</td>
+          </tr>
+          <tr data-host="twisterarmyseed.tk">
+            <td class="t-center p-8"><i class="bi-info-circle mr-6 f-size-26 p-16 c-5"></i></td>
+            <td class="t-left pl-26 p-8">twisterarmyseed.tk</td>
+            <td class="t-center p-8">0</td>
+            <td class="t-center p-8">-</td>
+          </tr>
+        </table>
+      </div>
+      <!--
+        <div id="vmap"></div>
+      -->
+      <div class="t-center my-36">
+        <a href="https://github.com/twisterarmy/twister-seeder" class="c-1">Become Service Node</a>
+      </div>
+    </div>
+  </div>
+</body>
