@@ -48,7 +48,6 @@ function nsLookup(host) {
 
 $( document ).ready(function() {
 
-  /*
   nsLookup('seed.twister.net.co');
   nsLookup('seed2.twister.net.co');
   nsLookup('seed3.twister.net.co');
@@ -57,9 +56,8 @@ $( document ).ready(function() {
   nsLookup('cruller.tasty.sexy');
   nsLookup('twister-seeder.muh.freedu.ms');
   nsLookup('twisterarmyseed.tk');
-  */
 
-
+  /*
   $('#vmap').vectorMap({
     map: 'world_en',
     backgroundColor: '#596374',
@@ -76,4 +74,5 @@ $( document ).ready(function() {
     selectedRegions: null,
     showTooltip: true,
   });
+  */
 });
