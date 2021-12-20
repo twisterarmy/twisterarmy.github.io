@@ -261,6 +261,16 @@ a.c-4:hover {
   margin-bottom: 48px
 }
 
+.px-8 {
+  padding-left: 8px;
+  padding-right: 8px
+}
+
+.py-16 {
+  padding-left: 16px;
+  padding-right: 16px
+}
+
 .p-8 {
   padding: 8px
 }
