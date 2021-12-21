@@ -6,11 +6,11 @@ function getCountry(answer, element) {
   $(answer).each(function() {
     $.ajax({
       type: 'GET',
-      url: 'http://www.geoplugin.net/json.gp?ip=' + this.data,
+      url: 'https://ipapi.co/' + this.data + '/json',
       dataType: 'json',
       success: function (result) {
-        if (result.geoplugin_countryCode && result.geoplugin_countryCode != '' && result.geoplugin_countryCode != 'undefined') {
-          element.children('td:eq(3)').append(' ' + result.geoplugin_countryCode + ' ');
+        if (result.country_code && result.country_code != '' && result.country_code != 'undefined') {
+          element.children('td:eq(3)').append(' ' + result.country_code + ' ');
         }
       }
     });
