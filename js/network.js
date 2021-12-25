@@ -56,6 +56,7 @@ $( document ).ready(function() {
   nsLookup('cruller.tasty.sexy');
   nsLookup('twister-seeder.muh.freedu.ms');
   nsLookup('twisterarmyseed.tk');
+  nsLookup('seed.twisterarmy.org');
 
   /*
   $('#vmap').vectorMap({
