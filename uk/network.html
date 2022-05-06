@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <title>Twisterarmy - Network Monitor</title>
+  <title>Twisterarmy - Мережа</title>
   <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/image/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="/css/font.css" />
@@ -21,22 +21,22 @@
     <div class="mw-1024 mx-auto">
       <div class="nav float-left h-48 lh-48">
         <div class="px-16">
-          <a class="c-1 f-size-18" href="/">Twisterarmy <i>Gateway</i></a>
+          <a class="c-1 f-size-18" href="/uk/">Twisterarmy <i>Gateway</i></a>
         </div>
       </div>
       <div class="nav bg-c-2 bg-img-2 float-right t-right h-48 lh-48">
         <div class="px-16">
-          <a class="c-1 ml-16" href="/"><i class="bi-house-door mr-6"></i>Home</a>
-          <a class="c-1 ml-16" href="/guide"><i class="bi-book mr-6"></i>Guide</a>
-          <a class="c-1 ml-16" href="/cloud"><i class="bi-cloud mr-6"></i>Cloud</a>
-          <a class="c-1 ml-16" href="/install"><i class="bi-download mr-6"></i>Install</a>
-          <span class="c-0 ml-16"><i class="bi-activity mr-6"></i>Network</span>
+          <a class="c-1 ml-16" href="/uk/"><i class="bi-house-door mr-6"></i>Головна</a>
+          <a class="c-1 ml-16" href="/uk/guide"><i class="bi-book mr-6"></i>Посібник</a>
+          <a class="c-1 ml-16" href="/uk/cloud"><i class="bi-cloud mr-6"></i>Хмара</a>
+          <a class="c-1 ml-16" href="/uk/install"><i class="bi-download mr-6"></i>Встановити</a>
+          <span class="c-0 ml-16"><i class="bi-activity mr-6"></i>Мережа</span>
           <a class="c-1 ml-16" href="https://github.com/twisterarmy"><i class="bi-github mr-6"></i>GitHub</a>
           <div class="c-1 ml-16 d-inline-block">
             <i class="bi-globe mr-6"></i>
-            <span class="c-0">EN</span>
+            <a class="c-1" href="/network">EN</a>
             |
-            <a class="c-1" href="/uk/network">UK</a>
+            <span class="c-0">UK</span>
           </div>
         </div>
       </div>
@@ -44,16 +44,16 @@
   </div>
   <div class="mw-1024 mx-auto of-hidden">
     <div class="mx-16">
-      <h1 class="f-size-26 mt-96 mb-48 pb-36 pt-16 t-center f-normal bb-1-2 b-c-0">Network Monitor</h1>
+      <h1 class="f-size-26 mt-96 mb-48 pb-36 pt-16 t-center f-normal bb-1-2 b-c-0">Мережа</h1>
       <!--<h2 class="f-size-20 mt-48 pb-10 f-normal t-center">DNS</h2>-->
       <div class="mx-auto mt-20 bg-c-4 b-r-3">
         <table class="w-100-100">
           <tr>
-            <th class="t-center bb-2 b-c-6 py-16 px-8">Status</th>
-            <th class="t-left pl-26 bb-2 b-c-6 py-16 px-8">Server</th>
-            <th class="t-center bb-2 b-c-6 py-16 px-8">Nodes</th>
-            <th class="t-center bb-2 b-c-6 py-16 px-8">Location</th>
-            <th class="t-left bb-2 b-c-6 py-16 px-8">Twister compatibility</th>
+            <th class="t-center bb-2 b-c-6 py-16 px-8">Статус</th>
+            <th class="t-left pl-26 bb-2 b-c-6 py-16 px-8">Сервер</th>
+            <th class="t-center bb-2 b-c-6 py-16 px-8">Вузли</th>
+            <th class="t-center bb-2 b-c-6 py-16 px-8">Розташування</th>
+            <th class="t-left bb-2 b-c-6 py-16 px-8">Сумісність</th>
           </tr>
           <tr data-host="seed.twister.net.co">
             <td class="t-center bb-2 b-c-6 py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
@@ -109,14 +109,14 @@
             <td class="t-left bb-2 b-c-6 pl-26 p-8">twisterarmyseed.tk</td>
             <td class="t-center bb-2 b-c-6 p-8">0</td>
             <td class="t-center bb-2 b-c-6 p-8">-</td>
-            <td class="t-left bb-2 b-c-6 p-8">[Official, TA Edition] Mar 20, 2021 and later</td>
+            <td class="t-left bb-2 b-c-6 p-8">[Official, TA Edition] від 20 березня, 2021</td>
           </tr>
           <tr data-host="seed.twisterarmy.org">
             <td class="t-center py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
             <td class="t-left pl-26 p-8">seed.twisterarmy.org</td>
             <td class="t-center p-8">0</td>
             <td class="t-center p-8">-</td>
-            <td class="t-left p-8">[TA Edition] Dec 25, 2021 and later</td>
+            <td class="t-left p-8">[TA Edition] від 25 грудня, 2021</td>
           </tr>
         </table>
       </div>
@@ -124,10 +124,10 @@
         <div id="vmap"></div>
       -->
       <div class="t-center my-36">
-        <small>* transmitted only the nodes running on port 28333 opened</small>
+        <small>* поширюються тільки вузли, які мають відкритий порт 28333</small>
       </div>
       <div class="t-center my-36">
-        <a href="/guide#tools-dns-seeder" class="c-1">Become DNS Seeder</a>
+        <a href="/uk/guide#tools-dns-seeder" class="c-1">Приєднатися до провайдерів DNS</a>
       </div>
     </div>
   </div>

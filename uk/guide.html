@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Twisterarmy - Посібник</title>
+  <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/image/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/font.css" />
+  <link rel="stylesheet" type="text/css" href="/css/bi.css?v=2" />
+  <link rel="stylesheet" type="text/css" href="/css/common.css?v=6" />
+  <link rel="stylesheet" type="text/css" href="/css/mobile.css" />
+  <script src="/js/jquery.js"></script>
+  <script src="/js/cloud.js"></script>
+</head>
+<body class="bg-c-1 bg-img-1 c-0">
+  <div class="bg-c-2 bg-img-2 c-1 of-hidden position-fixed z-i-99 position-t-0 position-x-0">
+    <div class="mw-1024 mx-auto">
+      <div class="nav float-left h-48 lh-48">
+        <div class="px-16">
+          <a class="c-1 f-size-18" href="/uk/">Twisterarmy <i>Gateway</i></a>
+        </div>
+      </div>
+      <div class="nav bg-c-2 bg-img-2 float-right t-right h-48 lh-48">
+        <div class="px-16">
+          <a class="c-1 ml-16" href="/uk/"><i class="bi-house-door mr-6"></i>Головна</a>
+          <span class="c-0 ml-16"><i class="bi-book mr-6"></i>Посібник</span>
+          <a class="c-1 ml-16" href="/uk/cloud"><i class="bi-cloud mr-6"></i>Хмара</a>
+          <a class="c-1 ml-16" href="/uk/install"><i class="bi-download mr-6"></i>Встановити</a>
+          <a class="c-1 ml-16" href="/uk/network"><i class="bi-activity mr-6"></i>Мережа</a>
+          <a class="c-1 ml-16" href="https://github.com/twisterarmy"><i class="bi-github mr-6"></i>GitHub</a>
+          <div class="c-1 ml-16 d-inline-block">
+            <i class="bi-globe mr-6"></i>
+            <a class="c-1" href="/guide">EN</a>
+            |
+            <span class="c-0">UK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mw-1024 mx-auto of-hidden my-48">
+    <div class="position-fixed z-i-98 p-16 o-h">
+      <h1 class="f-size-20 pt-16 pb-10 mb-16 px-12 f-normal">Посібник</h1>
+      <ul class="ml-16 my-8">
+        <li>
+          <a class="c-0 f-size-16" href="#about">Опис</a>
+          <ul class="ml-16 my-8">
+            <li><a class="c-3" href="#about-twister">Twister</a></li>
+            <li><a class="c-3" href="#about-twisterarmy">Twisterarmy</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="c-0 f-size-16" href="#getting-started">Початок роботи</a>
+          <ul class="ml-16 my-8">
+            <li><a class="c-3" href="#getting-started-overview">Огляд</a></li>
+            <li><a class="c-3" href="#getting-started-requirements">Технічні вимоги</a></li>
+            <li><a class="c-3" href="#getting-started-install">Встановлення</a></li>
+            <li><a class="c-3" href="#getting-started-uninstall">Видалення</a></li>
+            <li><a class="c-3" href="#getting-started-build-from-source">Компіляція</a></li>
+            <li><a class="c-3" href="#getting-started-alternative-usage">Альтернативні рішення</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="c-0 f-size-16" href="#development">Розробки</a>
+          <ul class="ml-16 my-8">
+            <li><a class="c-3" href="#development-command-line-interface">Командний інтерфейс</a></li>
+            <li><a class="c-3" href="#development-rpc-json-api">JSON-RPC/API</a></li>
+            <li><a class="c-3" href="#development-code-examples">Приклади коду</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="c-0 f-size-16" href="#tools">Інструменти</a>
+          <ul class="ml-16 my-8">
+            <li><a class="c-3" href="#tools-dns-seeder">DNS сервер</a></li>
+          </ul>
+        </li>
+        <li><a class="c-3 f-size-16" href="#contribution">Контрибуція</a></li>
+      </ul>
+    </div>
+    <div class="ml-240">
+      <div class="pb-16 pl-16 pr-16 o-h">
+        <a class="position-t--48 h-32 d-block" id="about"></a>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">Опис</h2>
+        <a class="position-t--48 h-32 d-block" id="about-twister"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Twister</h3>
+        <p class="mb-16">Twister &mdash; децентралізована пірингова платформа мікроблогів, створена <a class="c-3" href="https://github.com/miguelfreitas">Miguel Freitas</a> у червні, 2013.</p>
+        <p class="mb-16">Для початку користування, не потрібно жодних вхідних капіталів та інших вимог, що відрізняють платформу на фоні інших децентралізованих рішень. Мережа twister створена, щоб бути доступною для кожного без обмежень та звідусіль, в незалежності від географії користувача.</p>
+        <p class="mb-16">Роботоздатність інфраструктури забезпечується іншими вузлами, зокрема тих, які рекламують свої послуги шляхом майнінгу блоків, та <a class="c-3" href="/uk/network">провайдерів DNS</a>, хто сканує та поширює актуальні вузли для підключення нових.</p>
+        <p class="mb-16">Користувацький контент зберігається перманентно між користувачами, які читають один одного, тому для доступності дописів, публікатору не потрібне постійне підключення до мережі інтернет (за схожим принципом працює протокол IPFS, утім twister використовує незалежну екосистему власної реалізації). Сховище даних не цензурується, не може бути заблоковане чи видалене третьою стороною, оскільки кожен учасник мережі &mdash; є частиною суспільної бази даних. Термін зберігання контенту обмежується лише вашим часом перебування в мережі та перебуванням в мережі ваших читачів.</p>
+        <p class="mb-16">Для отримання більш детальної інформації стосовно технічної концепції twister, будь ласка, ознайомтесь з оригінальним документом <a class="c-3" href="https://github.com/twisterarmy/archive/raw/main/whitepaper.pdf">Whitepaper</a>.</p>
+        <p>Згідно <a class="c-3" href="http://twister.net.co/archives/617">Анонсу</a>, 25 червня 2020 року, офіційна підтримка проекту була припинена автором, утім <a class="c-3" href="/uk/network">Мережа twister</a> все ще активна, оскільки для функціонування не потребує централізованих ресурсів.</p>
+        <a class="position-t--48 h-32 d-block" id="about-twisterarmy"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Twisterarmy</h3>
+        <p class="mb-16">Twisterarmy &mdash; некомерційна організація, заснована на початку 2021 року кількома користувачами з наміром підтримувати та розвивати проект twister у форматі спільноти.</p>
+        <p class="mb-16">Ресурси нашої спільноти включать багато незалежних рішень, форків від багатьох розробників суміжних рішень: колекції програмного забезпечення для аналітики, хмарних сервісів та інших концепцій, які можуть бути реалізовані довкола екосистеми twister. Зокрема, спільнота Twisterarmy веде власну редакцію програмних продуктів twister-core, twister-html, twister-seeder та інших продуктів, що включають останні офіційні оновлення, утім мають власні доповнення &mdash; колекції тем оформлення, кращу підтримку сучасних медіа-форматів та актуальних DNS серверів для забезпечення більш стабільної роботи. Щоб отримати більше інформації щодо практичної діяльності спільноти, будь ласка, завітайте до нашого проекту на <a class="c-3" href="https://github.com/twisterarmy">GitHub</a>.</p>
+        <p class="mb-16">Мета нашої організації &mdash; збереження та підтримка інструментів для вільного спілкування, надаючи людям змогу спілкуватися з будь якого куточку планети без обмежень та цензури, а кодову базу &mdash; забезпечити актуальними оновленнями.</p>
+        <p class="mb-16">Якщо ви маєте будь-які пропозиції стосовно доповнення ресурсів, виправлення помилок, перекладу цього сайту &mdash; будь ласка, напишіть повідомлення до офіційного аккаунту спільноти @twisterarmy</p>
+        <p>Будуймо свободу разом ♡</p>
+        <a class="position-t--48 h-32 d-block" id="getting-started"></a>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">Початок роботи</h2>
+        <a class="position-t--48 h-32 d-block" id="getting-started-overview"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Огляд</h3>
+        <p class="mb-16">Наразі доступні декілька версій програмного забезпечення: Офіційна та редакція Twisterarmy. Ми рекомендуємо обрати останню, оскільки вона є повністю сумісною з мережею twister, включає нову функціональність а також містить останні офіційні оновлення. Ви можете ознайомитись з подробицями на сторінці обраного релізу.</p>
+        <a class="position-t--48 h-32 d-block" id="getting-started-requirements"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Технічні вимоги</h3>
+        <ul>
+          <li class="ml-32">Архітектури: amd64, ARM</li>
+          <li class="ml-32">Мінімальна частота: 500МГц</li>
+          <li class="ml-32">Оперативна пам’ять: 1024 Мб</li>
+          <li class="ml-32">Дисковий простір: 2048 Мб</li>
+          <li class="ml-32">Канал зв’язку: залежить від активності мережі, на даний момент становить близько 2 Гб на місяць.</li>
+        </ul>
+        <a class="position-t--48 h-32 d-block" id="getting-started-install"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Встановлення</h3>
+        <p>На даний момент, доступні зкомпільовані пакети для операційних систем сімейства Debian/Linux, з підтримкою процесорів amd64 та armhf.</p>
+        <p>Щоб завантажити необхідну версію, будь ласка, завітайте на сторінку <a class="c-3" href="install#download">Встановлення</a>.</p>
+        <p class="mb-16">Зкомпільовані бінарні пакети містять все необхідне для запуску вузла twister на персональному комп’ютері.</p>
+        <p class="mb-16">Приклад встановлення завантаженого пакету:</p>
+        <pre class="mx-auto mb-16 pt-16 bg-c-4 b-r-3 o-x">
+          sudo dpkg -i twister.deb
+        </pre>
+        <p>Після встановлення, додаток twister буде доступний в меню програм. Запуск twister також може бути ініційований через командний термінал.</p>
+        <p>Веб застосунок відкриється автоматично у браузері, що використовується системою, як стандартний. Якщо цього не сталось, просто відкрийте наступну адресу URL: <a class="c-3" href="http://localhost:28332">http://localhost:28332</a></p>
+        <a class="position-t--48 h-32 d-block" id="getting-started-uninstall"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Видалення</h3>
+        <p class="mb-16">Повністю видалити застосунок twister можна засобами графічного пакетного менеджеру або виконавши команду:</p>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+          sudo apt remove twister
+        </pre>
+        <a class="position-t--48 h-32 d-block" id="getting-started-build-from-source"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Компіляція</h3>
+        <p class="mb-16">Кращим способом користуватися вільним програмним забезпеченням є компіляція його з первинного коду.</p>
+        <p class="mb-16">Тим не менше, для спрощення процесу, ми рекомендуємо нашу розробку <a class="c-3" href="https://github.com/twisterarmy/twister-cli-installer">Twister CLI Installer</a>, за допомогою якої, ви зможете відповідаючи на прості питання встановити та безпечно налаштувати twister як на персональному комп’ютері, так і на віддаленому сервері.</p>
+        <p class="mb-16">У разі, якщо бажаєте контролювати процес компіляції особисто, або змінити первинний код під специфічні потреби, слідуйте за посиланнями на інструкції, що додані до кожного з продуктів у розділі <a class="c-3" href="install#build-from-source">Компіляція з початкового коду</a>.</p>
+        <p>Ручна компіляція полягає у встановленні щонайменше twister-core для серверу та twister-html у якості веб-клієнту.</p>
+        <a class="position-t--48 h-32 d-block" id="getting-started-alternative-usage"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Альтернативні рішення</h3>
+        <p>Якщо ви маєте обмежені апаратні ресурси або проблеми з підключенням, надаєте перевагу смартфонам або маєте обмежений запас батареї на ноутбукі, зверніть увагу на <a class="c-3" href="/uk/cloud">Хмарні рішення</a>, де не потрібне встановлення жодного програмного забезпечення локально, а мережею twister можна користуватися за допомогою веб-сайту провайдера.</p>
+        <a class="position-t--48 h-32 d-block" id="development"></a>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">Розробка</h2>
+        <a class="position-t--48 h-32 d-block" id="development-command-line-interface"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Командний інтерфейс</h3>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          twisterd [options]
+          twisterd [options] command [params]    Надіслати команду до -server або twisterd
+          twisterd [options] help                Список доступних команд
+          twisterd [options] help command        Отримати довідку по command
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Опції</h4>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+          -?                                     Дане інформаційне повідомлення
+          -conf=file                             Оголошення файлу конфігурації (стандартно: ~/.twister/twister.conf)
+          -pid=file                              Вказати pid файлу (стандартно: twisterd.pid)
+          -gen                                   Генерація монет (стандартно: 0)
+          -datadir=dir                           Вказати директорію даних
+          -htmldir=dir                           Вказати директорію HTML (стандартно: data/html)
+          -dbcache=n                             Вказати розмір кешу бази даних в мегабайтах (стандартно: 25)
+          -timeout=n                             Вказати тайм-аут з’єднання в мілісекундах (стандартно: 5000)
+          -proxy=ip:port                         Приєднатися до проксі
+          -socks=n                               Обрати версію сокету (4-5, стандартно: 5)
+          -tor=ip:port                           Використовувати проксі для доступу TOR (стандартно: same as -proxy)
+          -dns                                   Дозволити пошук DNS для -addnode, -seednode і -connect
+          -port=port                             Слухати підключення на порті (стандартно: 28333 or testnet: 18333)
+          -maxconnections=n                      Максимальна кількість підключень до пірів (стандартно: 125)
+          -addnode=ip                            Додати вузол для підключення та утримувати з’єднання активним
+          -connect=ip                            Приєднатися тільки до вказаного вузла
+          -seednode=ip                           Приєднатися до вказаного вузла, отримати адреси пірів та від’єднатись
+          -externalip=ip                         Вказати власний публічну IP адресу
+          -onlynet=net                           Приєднатися тільки до вузлів IPv4, IPv6 або Tor
+          -multiconnperip                        Дозволити мульти-з’єднання libtorrent (стандартно: 0)
+          -discover                              Віднайти власну IP адресу (стандартно: 1 на прослуховуванні та за умови -externalip)
+          -checkpoints                           Приймати тільки блоки, що відповідають вбудованим checkpoints (стандартно: 1)
+          -listen                                Отримувати підключення із-зовні (стандартно: 1 якщо -proxy або -connect)
+          -bind=addr                             Приєднайтеся до вказаної адреси і завжди слухайте її. Використовуйте [host]:port позначення для IPv6
+          -dnsseed                               Знайти пірів використовуючи пошук DNS (стандартно: 1 за вийнятком -connect)
+          -banscore=n                            Порогове значення для відключення вузлів, які погано працюють (стандартно: 100)
+          -bantime=n                             Кількість секунд, протягом яких вузли, які погано працюють, не підключаються знову (стандартно: 86400)
+          -maxreceivebuffer=n                    Максимальний буфер отримання на з’єднання, n*1000 байтів (стандартно: 5000)
+          -maxsendbuffer=n                       Мінімальний буфер отримання на з’єднання, n*1000 байтів (стандартно: 1000)
+          -upnp                                  Використовувати UPnP щоб відобразити порт, який прослуховування (стандартно: 1 коли прослуховується listening)
+          -paytxfee=amt                          Комісія за кілобайт для додавання до трансакцій, які ви надсилаєте
+          -testnet                               Використовувати тестову мережу
+          -debug                                 Вивести додаткову інформацію про налагодження. Мається на увазі параметри -debug*
+          -debugnet                              Вивести додаткову інформацію про налагодження мережі
+          -logtimestamps                         Додати мітку часу в інформацію про налагодження
+          -shrinkdebugfile                       Стиснути файл debug.log під час запуску (стандартно: 1 коли не вказано -debug)
+          -printtoconsole                        Відобразити інформацію про трасування в консоль замість файлу debug.log
+          -regtest                               Увійти в режим регресійного тесту, який використовує спеціальний ланцюжок, у якому блоки можна розв’язувати миттєво. Це призначено для інструментів регресійного тестування та розробки програм.
+          -rpcuser=user                          Логін для з’єднань JSON-RPC
+          -rpcpassword=pw                        Пароль для з’єднань JSON-RPC
+          -rpcport=port                          Вказати порт для з’єднань JSON-RPC (стандартно: 28332 або testnet: 18332)
+          -rpcallowip=ip                         Обмежити підключення через JSON-RPC для заданої IP адреси
+          -rpcconnect=ip                         Надіслати команди до вузла, який працює за адресою ip (стандартно: 127.0.0.1)
+          -rpcthreads=n                          Вказати кількість потоків для сервісу викликів RPC (стандартно: 10)
+          -public_server_mode                    Обмежити виконання JSON-RPC тільки для публічно-безпечних команд.
+          -blocknotify=cmd                       Виконати команду при зміні блоку (%s в команді замінюється хешем блоку)
+          -walletnotify=cmd                      Виконати команду при зміні транзакції у гаманці / обліковому записі (%s в команді змінюється на TxID)
+          -alertnotify=cmd                       Виконати команду на отриманні релевантного сповіщення (%s в команді змінюється на повідомлення)
+          -upgradewallet                         Оновити гаманець / обліковий запис до останнього формату
+          -keypool=n                             Встановити розмір ключа в пулі на n (стандартно: 100)
+          -rescan                                Пересканувати ланцюг блоків на наявність загублених транзакцій
+          -salvagewallet                         Спроба відновити приватні ключі з пошкодженого файлу twisterwallet.dat
+          -checkblocks=n                         Скільки блоків перевіряти при запуску (стандартно: 500, 0 = усі)
+          -checklevel=n                          Наскільки ретельна перевірка блоків (0-4, стандартно: 3)
+          -txindex                               Обслуговувати повний індекс транзакцій (стандартно: 0)
+          -loadblock=file                        Імпортувати блоки із зовнішнього файлу blk000??.dat
+          -reindex                               Перебудувати індекс ланцюга блоків з файлу blk000??.dat
+          -par=n                                 Встановити кількість потоків скрипта верифікації (до 16, 0 = автоматично, 0 = наявно ядер, стандартно: 0)
+
+          -blockminsize=n                        Встановити мінімальний розмір блоку в байтах (стандартно: 0)
+          -blockmaxsize=n                        Встановити максимальний розмір блоку в байтах (стандартно: 250000)
+          -blockprioritysize=n                   Встановити максимальний розмір транзакцій з високим пріоритетом / низькою платою в байтах (стандартно: 27000)
+
+          -rpcssl                                Використовувати OpenSSL (https) для з’єднань JSON-RPC
+          -rpcsslcertificatechainfile=file.cert  Файл сертифікату (стандартно: server.cert)
+          -rpcsslprivatekeyfile=file.pem         Файл ключа (стандартно: server.pem)
+          -rpcsslciphers=ciphers                 Прийнятні шифри (стандартно: TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)
+        </pre>
+        <a class="position-t--48 h-32 d-block" id="development-rpc-json-api"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">JSON-RPC/API</h3>
+        <p>Данні JSON повинні бути в кодуванні UTF-8.</p>
+        <p>Перш, ніж використовувати інтерфейс, необхідно створити файл конфігурації в директорії профілю.</p>
+        <p class="mb-16">Для UNIX-подібних платформ, стандартний шлях до файлу наступний: <i>~/.twister/twister.conf</i></p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          rpcuser=username
+          rpcpassword=password
+          rpcsslcertificatechainfile=шлях до файлу сертифікату (опціонально, якщо використовується з’єднання SSL)
+          rpcsslprivatekeyfile=шлях до файлу ключа (опціонально, якщо використовується з’єднання SSL)
+          rpcallowip=192.168.0.* щоб обмежити з’єднання тільки з локального хосту (0.0.0.0 або * tщоб дозволити усі з’єднання)
+        </pre>
+        <p class="mb-16"><small>* Використовуючи <a class="c-3" href="https://github.com/twisterarmy/twister-cli-installer">twister-cli-installer</a>, файл конфігурації буде створено автоматично, відповідно до вимог.</small></p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Список викликів</h4>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+          twisterd help
+        </pre>
+        <a class="position-t--48 h-32 d-block" id="development-code-examples"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Приклади коду</h3>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">PHP</h4>
+        <p><a class="c-3" href="https://github.com/twisterarmy/cloud-server">cloud-server</a> &mdash; Хмарна платформа, з підтримкою мульти-аккаунтів, дозволяє працювати з мережею twister віддалено через веб-інтерфейс.</p>
+        <a class="position-t--48 h-32 d-block" id="tools"></a>
+        <h3 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">Інструменти</h3>
+        <a class="position-t--48 h-32 d-block" id="tools-dns-seeder"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">DNS seeder</h3>
+        <p class="mb-16">Мережа twister вимагає декілька службових серверів DNS (seeders) які здійснюють пошук та надають актуальний список адресів для підключення нового вузла. Якщо у вашому розпоряджені linux сервер, доступний 24×7 та ви маєте змогу додати NS записи до власного домену, долучайтеся до списку вузлів DNS.</p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Встановлення</h4>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          sudo apt-get install build-essential libboost-all-dev libssl-dev
+          git clone https://github.com/twisterarmy/twister-seeder.git
+          cd twister-seeder
+          make
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Налаштування системи</h4>
+        <p class="mb-16">Дозвольте підключення через 53 порт, якщо ваш сервер використовує інші налаштування фаєрволу. За допомогою утиліти ufw, яка оперує ip-tables, це можна виконати простою командою нижче:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          sudo ufw allow 53
+        </pre>
+        <p class="mb-16">Користувачі операційних систем на базі Ubuntu повинні звільнити 53 порт, оскільки він стандартно використовується процесом systemd-resolved. Для цього внесіть наступні зміни у файл <i>/etc/systemd/resolved.conf</i>:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          DNSStubListener=no
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Конфігурація DNS</h4>
+        <p class="mb-16">Більшість доменних реєстраторів вимагають щонайменше два записи NS, наприклад, один із таких реєстраторів - безкошктовний сервіс dot.tk. Нижче наведено приклад конфігурації, коли для домену domainseed.tk вказані сервери імен у зонах верхнього рівня:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          domainseed.tk  NS domaindns1.tk, domaindns2.tk
+          domaindns1.tk  A Server IP
+          domaindns2.tk  A Server IP
+        </pre>
+        <p class="mb-16">У якості альтернативного прикладу, якщо у вашому розпорядженні платний домен, та ви не бажаєте замовляти додаткові адреси, достатньо створити два піддомени та вказати в налаштуваннях NS ті, які використовуються у якості NS серверу.</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          seed.domain.org NS ns1.domain.org, ns2.domain.org
+          ns1.domain.org  A Server IP
+          ns2.domain.org  A Server IP
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Запуск</h4>
+        <p class="mb-16">Коли всі записи NS створено та вони були оновлені, запуск серверу відбувається командою:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          sudo ./dnsseed -h domainseed.tk -n domaindns1.tk
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Тестування</h4>
+        <p class="mb-16">Якщо все зроблено вірно, ваш DNS сервер повинен з’явитися у списку <a class="c-3" href="/uk/network">вузлів мережі</a>. Зверніть увагу, у списку поширюються тільки ті вузли twister-core, запуск яких відбувався на відкритому для зовнішніх підключень порті 28333.</p>
+        <p class="mb-16">У разі, якщо twister-core працює на динамічному порті або не використовується взагалі, DNS сервер буде шукати та надавати інші адреси, які відповідають цим потребам.</p>
+        <p class="mb-16">Ви також можете перевірити роботоздатність серверу DNS, виконавши команду нижче:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          ost -a domainseed.tk domaindns1.tk
+
+          Trying &quot;domainseed.tk&quot;
+          Using domain server:
+          Name: domaindns1.tk
+          Address: IP#53
+          Aliases:
+
+          ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 18126
+          ;; flags: qr aa rd; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 0
+
+          ;; QUESTION SECTION:
+          ;domainseed.tk.		IN	ANY
+
+          ;; ANSWER SECTION:
+          domainseed.tk.	40000	IN	NS	domaindns1.tk.
+          domainseed.tk.	60	IN	A	IP
+          domainseed.tk.	60	IN	A	IP
+
+          Received 99 bytes from IP#53 in 0 ms
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Вирішення проблем</h4>
+        <p><a class="c-3" href="https://github.com/twisterarmy/twister-seeder/issues">https://github.com/twisterarmy/twister-seeder/issues</a></p>
+        <a class="position-t--48 h-32 d-block" id="contribution"></a>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 mb-16 px-12 f-normal">Контрибуція</h2>
+        Twisterarmy є відкритим до пропозицій суспільним проектом. Будь ласка, будьте вільні надсилати ваші пропозиції та вдосконалення на <a class="c-3" href="https://github.com/twisterarmy">GitHub</a>.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
