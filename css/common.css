@@ -178,12 +178,24 @@ a.c-4:hover {
   width: 33%
 }
 
+.w-66-100 {
+  width: 66%
+}
+
 .w-50-100 {
   width: 50%
 }
 
+.h-16 {
+  height: 16px
+}
+
 .h-28 {
   height: 28px
+}
+
+.h-32 {
+  height: 32px
 }
 
 .h-48 {
@@ -217,6 +229,11 @@ a.c-4:hover {
 .my-8 {
   margin-top: 8px;
   margin-bottom: 8px
+}
+
+.my-20 {
+  margin-top: 20px;
+  margin-bottom: 20px
 }
 
 .my-36 {
@@ -254,12 +271,28 @@ a.c-4:hover {
   margin-top: 48px
 }
 
+.mt-96 {
+  margin-top: 96px
+}
+
+.mt-148 {
+  margin-top: 148px
+}
+
 .mr-6 {
   margin-right: 6px
 }
 
 .ml-16 {
   margin-left: 16px
+}
+
+.ml-32 {
+  margin-left: 32px
+}
+
+.ml-240 {
+  margin-left: 240px
 }
 
 .mb-16 {
@@ -274,6 +307,10 @@ a.c-4:hover {
   margin-bottom: 48px
 }
 
+.mb-100 {
+  margin-bottom: 100px
+}
+
 .px-8 {
   padding-left: 8px;
   padding-right: 8px
@@ -282,6 +319,11 @@ a.c-4:hover {
 .py-16 {
   padding-top: 16px;
   padding-bottom: 16px
+}
+
+.py-24 {
+  padding-top: 24px;
+  padding-bottom: 24px
 }
 
 .p-8 {
@@ -296,8 +338,24 @@ a.c-4:hover {
   padding-top: 16px
 }
 
+.pt-24 {
+  padding-top: 24px
+}
+
+.pr-16 {
+  padding-right: 16px
+}
+
+.pl-16 {
+  padding-left: 16px
+}
+
 .pb-10 {
   padding-bottom: 10px
+}
+
+.pb-16 {
+  padding-bottom: 16px
 }
 
 .pb-20 {
@@ -314,8 +372,42 @@ a.c-4:hover {
 }
 
 /* positioning */
+
+.position-fixed {
+  position: fixed
+}
+
+.position-t--48 {
+  top: -48px
+}
+
+.position-t-0 {
+  top: 0
+}
+
+.position-x-0 {
+  left: 0;
+  right: 0
+}
+
+.z-i-99 {
+  z-index: 99;
+}
+
+.z-i-98 {
+  z-index: 98;
+}
+
 .o-h {
   overflow: hidden
+}
+
+.o-x {
+  overflow: auto
+}
+
+.d-block {
+  display: block
 }
 
 .d-inline-block {

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Twisterarmy - Guide</title>
+  <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/image/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/font.css" />
+  <link rel="stylesheet" type="text/css" href="/css/bi.css?v=2" />
+  <link rel="stylesheet" type="text/css" href="/css/common.css?v=6" />
+  <link rel="stylesheet" type="text/css" href="/css/mobile.css" />
+  <script src="/js/jquery.js"></script>
+  <script src="/js/cloud.js"></script>
+</head>
+<body class="bg-c-1 bg-img-1 c-0">
+  <div class="bg-c-2 bg-img-2 c-1 of-hidden position-fixed z-i-99 position-t-0 position-x-0">
+    <div class="mw-1024 mx-auto">
+      <div class="nav float-left h-48 lh-48">
+        <div class="px-16">
+          <a class="c-1 f-size-18" href="/">Twisterarmy <i>Gateway</i></a>
+        </div>
+      </div>
+      <div class="nav bg-c-2 bg-img-2 float-right t-right h-48 lh-48">
+        <div class="px-16">
+          <a class="c-1 ml-16" href="/"><i class="bi-house-door mr-6"></i>Home</a>
+          <span class="c-0 ml-16"><i class="bi-book mr-6"></i>Guide</span>
+          <a class="c-1 ml-16" href="/cloud"><i class="bi-cloud mr-6"></i>Cloud</a>
+          <a class="c-1 ml-16" href="/install"><i class="bi-download mr-6"></i>Install</a>
+          <a class="c-1 ml-16" href="/network"><i class="bi-activity mr-6"></i>Network</a>
+          <a class="c-1 ml-16" href="https://github.com/twisterarmy"><i class="bi-github mr-6"></i>GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mw-1024 mx-auto of-hidden my-48">
+    <div class="position-fixed z-i-98 p-16 o-h">
+      <h1 class="f-size-20 pt-16 pb-10 mb-16 px-12 f-normal">Guide</h1>
+      <ul class="ml-16 my-8">
+        <li>
+          <a class="c-0 f-size-16" href="#about">About</a>
+          <ul class="ml-16 my-8">
+            <li><a class="c-3" href="#about-twister">Twister</a></li>
+            <li><a class="c-3" href="#about-twisterarmy">Twisterarmy</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="c-0 f-size-16" href="#getting-started">Getting Started</a>
+          <ul class="ml-16 my-8">
+            <li><a class="c-3" href="#getting-started-overview">Overview</a></li>
+            <li><a class="c-3" href="#getting-started-requirements">Requirements</a></li>
+            <li><a class="c-3" href="#getting-started-install">Install</a></li>
+            <li><a class="c-3" href="#getting-started-uninstall">Uninstall</a></li>
+            <li><a class="c-3" href="#getting-started-build-from-source">Build from Source</a></li>
+            <li><a class="c-3" href="#getting-started-alternative-usage">Alternative Usage</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="c-0 f-size-16" href="#development">Development</a>
+          <ul class="ml-16 my-8">
+            <li><a class="c-3" href="#development-command-line-interface">Command Line Interface</a></li>
+            <li><a class="c-3" href="#development-rpc-json-api">JSON-RPC/API</a></li>
+            <li><a class="c-3" href="#development-code-examples">Code examples</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="c-0 f-size-16" href="#tools">Tools</a>
+          <ul class="ml-16 my-8">
+            <li><a class="c-3" href="#tools-dns-seeder">DNS Seeder</a></li>
+          </ul>
+        </li>
+        <li><a class="c-3 f-size-16" href="#contribution">Contribution</a></li>
+      </ul>
+    </div>
+    <div class="ml-240">
+      <div class="pb-16 pl-16 pr-16 o-h">
+        <a class="position-t--48 h-32 d-block" id="about"></a>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">About</h2>
+        <a class="position-t--48 h-32 d-block" id="about-twister"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Twister</h3>
+        <p class="mb-16">Twister is an open source, decentralized p2p microblogging platform, created by <a class="c-3" href="https://github.com/miguelfreitas">Miguel Freitas</a> in June, 2013.</p>
+        <p class="mb-16">Software conception uses it own PoW blockchain to store the user meta and DHT/BitTorrent protocol to share the data. Twister supports TOR to make host connections protected, direct messages end-to-end encrypted, groups, and other features.</p>
+        <p class="mb-16">To start using twister, no funds needed, the network works for everyone and for free. Infrastructure running by PoW miners advertising their services in promotion posts and <a class="c-3" href="/network">DNS seeders</a>, who crawling the active connections. User content saving permanently between following nodes, not require stable online from publisher. Data storage not censured, not owned just by publisher and not limited in time. Your posts accessible as long as you have followers online.</p>
+        <p class="mb-16">For more technical details about twister conception, please read original <a class="c-3" href="https://github.com/twisterarmy/archive/raw/main/whitepaper.pdf">Whitepaper</a>.</p>
+        <p>According to <a class="c-3" href="http://twister.net.co/archives/617">Announcement</a>, in June 25, 2020 official project maintenance was discontinued, but the <a class="c-3" href="/network">Network</a> still active as not requires centralized servers.</p>
+        <a class="position-t--48 h-32 d-block" id="about-twisterarmy"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Twisterarmy</h3>
+        <p class="mb-16">Twisterarmy is a non-profitable organization, created in 2021 by few users with intention to support original twister network in the community format.</p>
+        <p class="mb-16">Community resources contain many of independent forks by different people: related software collections, analytics tools, cloud servers and finally - self maintained software solutions, like TwisterArmy Edition with extra-features which not included in official repository. To get more details about our activity, take a look at <a class="c-3" href="https://github.com/twisterarmy">Twisterarmy GitHub Repository</a>.</p>
+        <p>Our goal to keep speech tools free, people connection accessible and source code living.</p>
+        <p class="mb-16">If you have any of propositions, please create new ticket or send a message to our official account @twisterarmy</p>
+        <p>Let&apos;s build a freedom together ♡</p>
+        <a class="position-t--48 h-32 d-block" id="getting-started"></a>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">Getting Started</h2>
+        <a class="position-t--48 h-32 d-block" id="getting-started-overview"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Overview</h3>
+        <p class="mb-16">There is few twister versions available: Official and Twisterarmy Editions. We recommend to chose the last one, because it supports new <a class="c-3" href="/network">DNS seeders</a> and some features, like more templates and media formats support, still not merged with official one. For more details, please read release notes of selected version.</p>
+        <p>Both of versions are compatible with original twister blockchain, soft- and hard-points, has the same dependencies an code-level versions.</p>
+        <p>Also, Twisterarmy Edition updates are sending to official branches, but not all of them merged with official codebase. All of official updates are merging with Twisterarmy Edition.</p>
+        <a class="position-t--48 h-32 d-block" id="getting-started-requirements"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Requirements</h3>
+        <ul>
+          <li class="ml-32">CPU Architectures: amd64, ARM</li>
+          <li class="ml-32">CPU Freq: 500MHz</li>
+          <li class="ml-32">RAM: 1024 Mb</li>
+          <li class="ml-32">Storage: 2048 Mb</li>
+          <li class="ml-32">Bandwidth: depends on the network activity, at this moment - about 2 Gb per month.</li>
+        </ul>
+        <a class="position-t--48 h-32 d-block" id="getting-started-install"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Install</h3>
+        <p>At this moment, available community-maintained pre-compiled Debian/Linux binaries for amd64 and armhf processors.</p>
+        <p>To download latest version, please visit <a class="c-3" href="install#download">Installation page</a>.</p>
+        <p class="mb-16">Pre-compiled binaries contain all requirements to launch twister full node on your machine.</p>
+        <p class="mb-16">Package installation example:</p>
+        <pre class="mx-auto mb-16 pt-16 bg-c-4 b-r-3 o-x">
+          sudo dpkg -i twister.deb
+        </pre>
+        <p>After installing, launch twister node from application menu or by command line interface.</p>
+        <p>Web application in your browser should be opened automatically at the address: <a class="c-3" href="http://localhost:28332">http://localhost:28332</a></p>
+        <a class="position-t--48 h-32 d-block" id="getting-started-uninstall"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Uninstall</h3>
+        <p class="mb-16">Purge twister software removing may be initiated by the command or using GUI software manager:</p>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+          sudo apt remove twister
+        </pre>
+        <a class="position-t--48 h-32 d-block" id="getting-started-build-from-source"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Build from Source</h3>
+        <p class="mb-16">The better way to use free and open software is building it from the sources.</p>
+        <p class="mb-16">We recommend to use <a class="c-3" href="https://github.com/twisterarmy/twister-cli-installer">Twister CLI Installer</a> script, where you can simply select twister edition and setup remote connection by answering guide questions.</p>
+        <p>If you would like to build twister for yourself, please, choose edition you like and follow instructions on the <a class="c-3" href="install#build-from-source">Installation Page, Build from Source section</a>.</p>
+        <p>Manual installation means installing twister-core server and twister-html client separately. Let&apos;s take a look on process bellow.</p>
+        <a class="position-t--48 h-32 d-block" id="getting-started-alternative-usage"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Alternative Usage</h3>
+        <p>If you have hardware or internet provider restrictions, limited connection or wish to join twisterverse trough smartphone or laptop where power safe in priority,</p>
+        <p>try connect to <a class="c-3" href="cloud">Twister Cloud Providers</a> where the local node installation not required.</p>
+        <a class="position-t--48 h-32 d-block" id="development"></a>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">Development</h2>
+        <a class="position-t--48 h-32 d-block" id="development-command-line-interface"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Command Line Interface</h3>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          twisterd [options]
+          twisterd [options] command [params]    Send command to -server or twisterd
+          twisterd [options] help                List commands
+          twisterd [options] help command        Get help for a command
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Options</h4>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+          -?                                     This help message
+          -conf=file                             Specify configuration file (default: ~/.twister/twister.conf)
+          -pid=file                              Specify pid file (default: twisterd.pid)
+          -gen                                   Generate coins (default: 0)
+          -datadir=dir                           Specify data directory
+          -htmldir=dir                           Specify HTML directory to serve (default: data/html)
+          -dbcache=n                             Set database cache size in megabytes (default: 25)
+          -timeout=n                             Specify connection timeout in milliseconds (default: 5000)
+          -proxy=ip:port                         Connect through socks proxy
+          -socks=n                               Select the version of socks proxy to use (4-5, default: 5)
+          -tor=ip:port                           Use proxy to reach tor hidden services (default: same as -proxy)
+          -dns                                   Allow DNS lookups for -addnode, -seednode and -connect
+          -port=port                             Listen for connections on port (default: 28333 or testnet: 18333)
+          -maxconnections=n                      Maintain at most n connections to peers (default: 125)
+          -addnode=ip                            Add a node to connect to and attempt to keep the connection open
+          -connect=ip                            Connect only to the specified node(s)
+          -seednode=ip                           Connect to a node to retrieve peer addresses, and disconnect
+          -externalip=ip                         Specify your own public address
+          -onlynet=net                           Only connect to nodes in network net (IPv4, IPv6 or Tor)
+          -multiconnperip                        Enable libtorrent multiple connections per ip (default: 0)
+          -discover                              Discover own IP address (default: 1 when listening and no -externalip)
+          -checkpoints                           Only accept block chain matching built-in checkpoints (default: 1)
+          -listen                                Accept connections from outside (default: 1 if no -proxy or -connect)
+          -bind=addr                             Bind to given address and always listen on it. Use [host]:port notation for IPv6
+          -dnsseed                               Find peers using DNS lookup (default: 1 unless -connect)
+          -banscore=n                            Threshold for disconnecting misbehaving peers (default: 100)
+          -bantime=n                             Number of seconds to keep misbehaving peers from reconnecting (default: 86400)
+          -maxreceivebuffer=n                    Maximum per-connection receive buffer, n*1000 bytes (default: 5000)
+          -maxsendbuffer=n                       Maximum per-connection send buffer, n*1000 bytes (default: 1000)
+          -upnp                                  Use UPnP to map the listening port (default: 1 when listening)
+          -paytxfee=amt                          Fee per KB to add to transactions you send
+          -testnet                               Use the test network
+          -debug                                 Output extra debugging information. Implies all other -debug* options
+          -debugnet                              Output extra network debugging information
+          -logtimestamps                         Prepend debug output with timestamp
+          -shrinkdebugfile                       Shrink debug.log file on client startup (default: 1 when no -debug)
+          -printtoconsole                        Send trace/debug info to console instead of debug.log file
+          -regtest                               Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development.
+          -rpcuser=user                          Username for JSON-RPC connections
+          -rpcpassword=pw                        Password for JSON-RPC connections
+          -rpcport=port                          Listen for JSON-RPC connections on port (default: 28332 or testnet: 18332)
+          -rpcallowip=ip                         Allow JSON-RPC connections from specified IP address
+          -rpcconnect=ip                         Send commands to node running on ip (default: 127.0.0.1)
+          -rpcthreads=n                          Set the number of threads to service RPC calls (default: 10)
+          -public_server_mode                    Limit JSON-RPC execution to public/safe commands only.
+          -blocknotify=cmd                       Execute command when the best block changes (%s in cmd is replaced by block hash)
+          -walletnotify=cmd                      Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)
+          -alertnotify=cmd                       Execute command when a relevant alert is received (%s in cmd is replaced by message)
+          -upgradewallet                         Upgrade wallet to latest format
+          -keypool=n                             Set key pool size to n (default: 100)
+          -rescan                                Rescan the block chain for missing wallet transactions
+          -salvagewallet                         Attempt to recover private keys from a corrupt twisterwallet.dat
+          -checkblocks=n                         How many blocks to check at startup (default: 500, 0 = all)
+          -checklevel=n                          How thorough the block verification is (0-4, default: 3)
+          -txindex                               Maintain a full transaction index (default: 0)
+          -loadblock=file                        Imports blocks from external blk000??.dat file
+          -reindex                               Rebuild block chain index from current blk000??.dat files
+          -par=n                                 Set the number of script verification threads (up to 16, 0 = auto, 0 = leave that many cores free, default: 0)
+
+          -blockminsize=n                        Set minimum block size in bytes (default: 0)
+          -blockmaxsize=n                        Set maximum block size in bytes (default: 250000)
+          -blockprioritysize=n                   Set maximum size of high-priority/low-fee transactions in bytes (default: 27000)
+
+          -rpcssl                                Use OpenSSL (https) for JSON-RPC connections
+          -rpcsslcertificatechainfile=file.cert  Server certificate file (default: server.cert)
+          -rpcsslprivatekeyfile=file.pem         Server private key (default: server.pem)
+          -rpcsslciphers=ciphers                 Acceptable ciphers (default: TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH)
+        </pre>
+        <a class="position-t--48 h-32 d-block" id="development-rpc-json-api"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">JSON-RPC/API</h3>
+        <p>JSON data requests should be encoded with UTF-8.</p>
+        <p>Before using API calls trough RPC interface, create configuration file in the twister profile directory.</p>
+        <p class="mb-16">On the UNIX-based platforms, path to the file looks like <i>~/.twister/twister.conf</i></p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          rpcuser=username
+          rpcpassword=password
+          rpcsslcertificatechainfile=path to certificate file (if SSL connection required)
+          rpcsslprivatekeyfile=path to key file (if SSL connection required)
+          rpcallowip=192.168.0.* to restrict connections from localhost (0.0.0.0 or * to allow all connections)
+        </pre>
+        <p class="mb-16"><small>* By using community-written <a class="c-3" href="https://github.com/twisterarmy/twister-cli-installer">twister-cli-installer</a> script, configuration file and certificates creating automatically.</small></p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Calls list</h4>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+          twisterd help
+        </pre>
+        <a class="position-t--48 h-32 d-block" id="development-code-examples"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Code examples</h3>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">PHP</h4>
+        <p><a class="c-3" href="https://github.com/twisterarmy/cloud-server">cloud-server</a> &mdash; Multi-account instance allow users to interact with the twister network through web service.</p>
+        <a class="position-t--48 h-32 d-block" id="tools"></a>
+        <h3 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">Tools</h3>
+        <a class="position-t--48 h-32 d-block" id="tools-dns-seeder"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">DNS seeder</h3>
+        <p class="mb-16">Twister network requires a couple of special DNS servers (seeders) which provide an updated list of known peers. If you have a 24×7 linux machine and you are able to add an special NS record to your domain, please consider running twister-seeder.</p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Install</h4>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          sudo apt-get install build-essential libboost-all-dev libssl-dev
+          git clone https://github.com/twisterarmy/twister-seeder.git
+          cd twister-seeder
+          make
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">System configuration</h4>
+        <p class="mb-16">Enable 53 port connections, if the firewall enabled. With ufw ip-tables manager, it just a simple command bellow:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          sudo ufw allow 53
+        </pre>
+        <p class="mb-16">Ubuntu users must to free 53 port, that natively using by systemd-resolved process in <i>/etc/systemd/resolved.conf</i></p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          DNSStubListener=no
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">DNS configuration</h4>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          # Usually, domain settings requires at least 2 name servers
+
+          domainseed.tk  NS domaindns1.tk, domaindns2.tk
+          domaindns1.tk  A Server IP
+          domaindns2.tk  A Server IP
+
+
+          # Alternatively, nameservers could be registered as subdomains
+
+          seed.twisterarmy.org NS ns1.twisterarmy.org, ns2.twisterarmy.org
+          ns1.twisterarmy.org  A Server IP
+          ns2.twisterarmy.org  A Server IP
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Running</h4>
+        <p class="mb-16">Task also could be added into crontab to launch server on @reboot</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          sudo ./dnsseed -h twisterarmyseed.tk -n twisterarmydns.tk
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Testing</h4>
+        <p class="mb-16">When everything configurated properly, and DNS settings updated, your server must to be accesible in the <a class="c-3" href="/network">Twisterarmy Network Monitor</a>. Pay attention, transmitted only the nodes running on port 28333 opened, so if you want to participate the network support, open 28333 port with twister-core running.</p>
+        <p class="mb-16">Alternatively, execute following command in the terminal:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          ost -a twisterarmyseed.tk twisterarmydns.tk
+
+          Trying &quot;twisterarmyseed.tk&quot;
+          Using domain server:
+          Name: twisterarmydns.tk
+          Address: IP#53
+          Aliases:
+
+          ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 18126
+          ;; flags: qr aa rd; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 0
+
+          ;; QUESTION SECTION:
+          ;twisterarmyseed.tk.		IN	ANY
+
+          ;; ANSWER SECTION:
+          twisterarmyseed.tk.	40000	IN	NS	twisterarmydns.tk.
+          twisterarmyseed.tk.	60	IN	A	IP
+          twisterarmyseed.tk.	60	IN	A	IP
+
+          Received 99 bytes from IP#53 in 0 ms
+        </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Troubleshooting</h4>
+        <p><a class="c-3" href="https://github.com/twisterarmy/twister-seeder/issues">https://github.com/twisterarmy/twister-seeder/issues</a></p>
+        <a class="position-t--48 h-32 d-block" id="contribution"></a>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 mb-16 px-12 f-normal">Contribution</h2>
+        Twisterarmy is the community project. Please send your proposes and participate with improvements to development on <a class="c-3" href="https://github.com/twisterarmy">GitHub</a>.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
