@@ -276,9 +276,9 @@
           ns2.domain.org  A Server IP
         </pre>
         <h4 class="f-size-16 mb-16 px-12 f-normal">Running</h4>
-        <p class="mb-16">Task also could be added into crontab to launch server on @reboot</p>
+        <p class="mb-16">Task also could be added into crontab from root user, to launch the server on system reboot:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
-          sudo ./dnsseed -h domainseed.tk -n domaindns1.tk
+          @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
         </pre>
         <h4 class="f-size-16 mb-16 px-12 f-normal">Testing</h4>
         <p class="mb-16">When everything configurated properly, and DNS settings updated, your server must to be accesible in the <a class="c-3" href="/network">Twisterarmy Network Monitor</a>. Pay attention, transmitted only the nodes running on port 28333 opened, so if you want to participate the network support, open 28333 port with twister-core running.</p>

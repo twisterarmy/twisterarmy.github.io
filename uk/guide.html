@@ -276,6 +276,10 @@
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           sudo ./dnsseed -h domainseed.tk -n domaindns1.tk
         </pre>
+        <p class="mb-16">Автоматичний запуск DNS сурверу при старті системи, можна налаштувати за допомогою crontab, від користувача root:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
+        </pre>
         <h4 class="f-size-16 mb-16 px-12 f-normal">Тестування</h4>
         <p class="mb-16">Якщо все зроблено вірно, ваш DNS сервер повинен з’явитися у списку <a class="c-3" href="/uk/network">вузлів мережі</a>. Зверніть увагу, у списку поширюються тільки ті вузли twister-core, запуск яких відбувався на відкритому для зовнішніх підключень порті 28333.</p>
         <p class="mb-16">У разі, якщо twister-core працює на динамічному порті або не використовується взагалі, DNS сервер буде шукати та надавати інші адреси, які відповідають цим потребам.</p>
