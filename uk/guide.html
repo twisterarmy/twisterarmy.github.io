@@ -69,7 +69,7 @@
           </ul>
         </li>
         <li>
-          <a class="c-0 f-size-16" href="#dns-seeder">DNS сервер</a>
+          <a class="c-0 f-size-16" href="#dns-seeder">DNS сервіс</a>
           <ul class="ml-16 my-8">
             <li><a class="c-3" href="#dns-seeder-overview">Огляд</a></li>
             <li><a class="c-3" href="#dns-seeder-install">Встановлення</a></li>
@@ -97,7 +97,7 @@
         <a class="position-t--48 h-32 d-block" id="about-twisterarmy"></a>
         <h3 class="f-size-20 mb-16 px-12 f-normal">Twisterarmy</h3>
         <p class="mb-16">Twisterarmy &mdash; некомерційна організація, заснована на початку 2021 року кількома користувачами з наміром підтримувати та розвивати проект twister у форматі спільноти.</p>
-        <p class="mb-16">Ресурси нашої спільноти включать багато незалежних рішень, форків від багатьох розробників суміжних рішень: колекції програмного забезпечення для аналітики, хмарних сервісів та інших концепцій, які можуть бути реалізовані довкола екосистеми twister. Зокрема, спільнота Twisterarmy веде власну редакцію програмних продуктів twister-core, twister-html, twister-seeder та інших продуктів, що включають останні офіційні оновлення, утім мають власні доповнення &mdash; колекції тем оформлення, кращу підтримку сучасних медіа-форматів та актуальних DNS серверів для забезпечення більш стабільної роботи. Щоб отримати більше інформації щодо практичної діяльності спільноти, будь ласка, завітайте до нашого проекту на <a class="c-3" href="https://github.com/twisterarmy">GitHub</a>.</p>
+        <p class="mb-16">Ресурси нашої спільноти включать багато незалежних рішень, форків від багатьох розробників суміжних рішень: колекції програмного забезпечення для аналітики, хмарних сервісів та інших концепцій, які можуть бути реалізовані довкола екосистеми twister. Зокрема, спільнота Twisterarmy веде власну редакцію програмних продуктів twister-core, twister-html, twister-seeder та інших продуктів, що включають останні офіційні оновлення, утім мають власні доповнення &mdash; колекції тем оформлення, кращу підтримку сучасних медіа-форматів та актуальних DNS сервісів для забезпечення більш стабільної роботи. Щоб отримати більше інформації щодо практичної діяльності спільноти, будь ласка, завітайте до нашого проекту на <a class="c-3" href="https://github.com/twisterarmy">GitHub</a>.</p>
         <p class="mb-16">Мета нашої організації &mdash; збереження та підтримка інструментів для вільного спілкування, надаючи людям змогу спілкуватися з будь якого куточку планети без обмежень та цензури, а кодову базу &mdash; забезпечити актуальними оновленнями.</p>
         <p class="mb-16">Якщо ви маєте будь-які пропозиції стосовно доповнення ресурсів, виправлення помилок, перекладу цього сайту &mdash; будь ласка, напишіть повідомлення до офіційного аккаунту спільноти @twisterarmy</p>
         <p>Будуймо свободу разом ♡</p>
@@ -231,7 +231,7 @@
           rpcpassword=password
           rpcsslcertificatechainfile=шлях до файлу сертифікату (опціонально, якщо використовується з’єднання SSL)
           rpcsslprivatekeyfile=шлях до файлу ключа (опціонально, якщо використовується з’єднання SSL)
-          rpcallowip=192.168.0.* щоб обмежити з’єднання тільки з локального хосту (0.0.0.0 або * tщоб дозволити усі з’єднання)
+          rpcallowip=192.168.0.* щоб обмежити з’єднання тільки з локального хосту (0.0.0.0 або * t щоб дозволити усі з’єднання)
         </pre>
         <p class="mb-16"><small>* Використовуючи <a class="c-3" href="https://github.com/twisterarmy/twister-cli-installer">twister-cli-installer</a>, файл конфігурації буде створено автоматично, відповідно до вимог.</small></p>
         <h4 class="f-size-16 mb-16 px-12 f-normal">Список викликів</h4>
@@ -243,7 +243,7 @@
         <h4 class="f-size-16 mb-16 px-12 f-normal">PHP</h4>
         <p><a class="c-3" href="https://github.com/twisterarmy/cloud-server">cloud-server</a> &mdash; Хмарна платформа, з підтримкою мульти-аккаунтів, дозволяє працювати з мережею twister віддалено через веб-інтерфейс.</p>
         <a class="position-t--48 h-32 d-block" id="dns-seeder"></a>
-        <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">DNS сервер</h2>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">DNS сервіс</h2>
         <a class="position-t--48 h-32 d-block" id="dns-seeder-overview"></a>
         <h3 class="f-size-20 mb-16 px-12 f-normal">Огляд</h3>
         <p class="mb-16">Мережа twister вимагає декілька службових серверів DNS (seeders) які здійснюють пошук та надають актуальний список адресів для підключення нового вузла. Якщо у вашому розпоряджені linux сервер, доступний 24×7 та ви маєте змогу додати NS записи до власного домену, долучайтеся до списку вузлів DNS.</p>
@@ -339,7 +339,7 @@
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.org",""};
         </pre>
-        <p class="mb-16">Додайте в кінець списку адресу вашого DNS серверу</p>
+        <p class="mb-16">Додайте в кінець списку адресу вашого DNS сервісу</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.org","domainseed.tk",""};
         </pre>
@@ -349,7 +349,7 @@
         </pre>
         <p class="mb-16">Оскільки twister-seeder також потребує ініціальних вузлів для початку сканування інших, запис DNS буде доступний для інших серверів після повторної компіляції.</p>
         <h4 class="f-size-16 mb-16 px-12 f-normal">Монітор мережі</h4>
-        <p>Для того, щоб додати новий DNS сервер до <a class="c-3" href="/uk/network.html">Мережевого монітору</a> на цьому сайті для зручного відстеження статусу, достатньо доповнити список інших провайдерів на <a class="c-3" href="https://github.com/twisterarmy/twisterarmy.github.io/blob/main/network.html">сторінці GitHub</a>.</p>
+        <p>Для того, щоб додати новий DNS сервіс до <a class="c-3" href="/uk/network.html">Мережевого монітору</a> на цьому сайті для зручного відстеження статусу, достатньо доповнити список інших провайдерів на <a class="c-3" href="https://github.com/twisterarmy/twisterarmy.github.io/blob/main/network.html">сторінці GitHub</a>.</p>
         <a class="position-t--48 h-32 d-block" id="dns-seeder-troubleshooting"></a>
         <h3 class="f-size-20 mb-16 px-12 f-normal">Вирішення проблем</h3>
         <h4 class="f-size-16 mb-16 px-12 f-normal">DNS offline</h4>
