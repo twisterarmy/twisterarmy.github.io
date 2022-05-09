@@ -69,12 +69,17 @@
           </ul>
         </li>
         <li>
-          <a class="c-0 f-size-16" href="#tools">Інструменти</a>
+          <a class="c-0 f-size-16" href="#dns-seeder">DNS сервер</a>
           <ul class="ml-16 my-8">
-            <li><a class="c-3" href="#tools-dns-seeder">DNS сервер</a></li>
+            <li><a class="c-3" href="#dns-seeder-overview">Огляд</a></li>
+            <li><a class="c-3" href="#dns-seeder-install">Встановлення</a></li>
+            <li><a class="c-3" href="#dns-seeder-config">Налаштування</a></li>
+            <li><a class="c-3" href="#dns-seeder-testing">Тестування</a></li>
+            <li><a class="c-3" href="#dns-seeder-register">Реєстрація в мережі</a></li>
+            <li><a class="c-3" href="#dns-seeder-troubleshooting">Вирішення проблем</a></li>
           </ul>
         </li>
-        <li><a class="c-3 f-size-16" href="#contribution">Контрибуція</a></li>
+        <li><a class="c-0 f-size-16" href="#contribution">Контрибуція</a></li>
       </ul>
     </div>
     <div class="ml-240">
@@ -100,7 +105,7 @@
         <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">Початок роботи</h2>
         <a class="position-t--48 h-32 d-block" id="getting-started-overview"></a>
         <h3 class="f-size-20 mb-16 px-12 f-normal">Огляд</h3>
-        <p class="mb-16">Наразі доступні декілька версій програмного забезпечення: Офіційна та редакція Twisterarmy. Ми рекомендуємо обрати останню, оскільки вона є повністю сумісною з мережею twister, включає нову функціональність а також містить останні офіційні оновлення. Ви можете ознайомитись з подробицями на сторінці обраного релізу.</p>
+        <p>Наразі доступні декілька версій програмного забезпечення: Офіційна та редакція Twisterarmy. Ми рекомендуємо обрати останню, оскільки вона є повністю сумісною з мережею twister, включає нову функціональність а також містить останні офіційні оновлення. Ви можете ознайомитись з подробицями на сторінці обраного релізу.</p>
         <a class="position-t--48 h-32 d-block" id="getting-started-requirements"></a>
         <h3 class="f-size-20 mb-16 px-12 f-normal">Технічні вимоги</h3>
         <ul>
@@ -237,19 +242,24 @@
         <h3 class="f-size-20 mb-16 px-12 f-normal">Приклади коду</h3>
         <h4 class="f-size-16 mb-16 px-12 f-normal">PHP</h4>
         <p><a class="c-3" href="https://github.com/twisterarmy/cloud-server">cloud-server</a> &mdash; Хмарна платформа, з підтримкою мульти-аккаунтів, дозволяє працювати з мережею twister віддалено через веб-інтерфейс.</p>
-        <a class="position-t--48 h-32 d-block" id="tools"></a>
-        <h3 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">Інструменти</h3>
-        <a class="position-t--48 h-32 d-block" id="tools-dns-seeder"></a>
-        <h3 class="f-size-20 mb-16 px-12 f-normal">DNS сервер</h3>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder"></a>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">DNS сервер</h2>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-overview"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Огляд</h3>
         <p class="mb-16">Мережа twister вимагає декілька службових серверів DNS (seeders) які здійснюють пошук та надають актуальний список адресів для підключення нового вузла. Якщо у вашому розпоряджені linux сервер, доступний 24×7 та ви маєте змогу додати NS записи до власного домену, долучайтеся до списку вузлів DNS.</p>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">Встановлення</h4>
-        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+        <p>У прикладах нижче буде розглянуто процес налаштування на прикладі демонстраційних доменів першого рівня: domainseed.tk, domaindns1.tk, domaindns2.tk та у якості альтернативи - субдоменів seed.domain.org, ns1.domain.org, ns2.domain.org.</p>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-install"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Встановлення</h3>
+        <p class="mb-16">Наразі встановлення доступне тільки шляхом компіляції з первинного коду:</p>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
           sudo apt install build-essential libboost-all-dev libssl-dev
           git clone https://github.com/twisterarmy/twister-seeder.git
           cd twister-seeder
           make
         </pre>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">Налаштування системи</h4>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-config"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Налаштування</h3>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Система</h4>
         <p class="mb-16">Дозвольте підключення через 53 порт, якщо ваш сервер використовує інші налаштування фаєрволу. За допомогою утиліти ufw, яка оперує ip-tables, це можна виконати простою командою нижче:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           sudo ufw allow 53
@@ -258,7 +268,7 @@
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           DNSStubListener=no
         </pre>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">Конфігурація DNS</h4>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Записи DNS</h4>
         <p class="mb-16">Більшість доменних реєстраторів вимагають щонайменше два записи NS, наприклад, один із таких реєстраторів - безкошктовний сервіс dot.tk. Нижче наведено приклад конфігурації, коли для домену domainseed.tk вказані сервери імен у зонах верхнього рівня:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           domainseed.tk  NS domaindns1.tk, domaindns2.tk
@@ -266,12 +276,13 @@
           domaindns2.tk  A Server IP
         </pre>
         <p class="mb-16">У якості альтернативного прикладу, якщо у вашому розпорядженні платний домен, та ви не бажаєте замовляти додаткові адреси, достатньо створити два піддомени та вказати в налаштуваннях NS ті, які використовуються у якості NS серверу.</p>
-        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
           seed.domain.org NS ns1.domain.org, ns2.domain.org
           ns1.domain.org  A Server IP
           ns2.domain.org  A Server IP
         </pre>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">Запуск</h4>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-testing"></a>
+        <h3 class="f-size-20 px-12 mb-16 f-normal">Тестування</h3>
         <p class="mb-16">Коли всі записи NS створено та вони були оновлені, запуск серверу відбувається командою:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           sudo ./dnsseed -h domainseed.tk -n domaindns1.tk
@@ -280,10 +291,7 @@
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
         </pre>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">Тестування</h4>
-        <p class="mb-16">Якщо все зроблено вірно, ваш DNS сервер повинен з’явитися у списку <a class="c-3" href="/uk/network">вузлів мережі</a>. Зверніть увагу, у списку поширюються тільки ті вузли twister-core, запуск яких відбувався на відкритому для зовнішніх підключень порті 28333.</p>
-        <p class="mb-16">У разі, якщо twister-core працює на динамічному порті або не використовується взагалі, DNS сервер буде шукати та надавати інші адреси, які відповідають цим потребам.</p>
-        <p class="mb-16">Ви також можете перевірити роботоздатність серверу DNS, виконавши команду нижче:</p>
+        <p class="mb-16">Якщо все зроблено вірно, ви повинні отримати наступний ризультат:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           host -a domainseed.tk domaindns1.tk
 
@@ -306,7 +314,60 @@
 
           Received 99 bytes from IP#53 in 0 ms
         </pre>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">Вирішення проблем</h4>
+        <p class="mb-16">У разі, якщо знайдений вузол twister-core працює на динамічному порті, він не буде відображатися в результатах індексу.</p>
+        <p class="mb-16">У списку відображаються тільки вузли twister-core, які працюють на відкритому порті 28333. Утім, прийнанні одного достатньо для поширення інших вузлів на динамічних портах.</p>
+        <p>Якщо ви бажаєте опублікувати власний вузол у списку серверів DNS, запустіть twister-core з опцією <i>-port=28333</i> та дочекайтесь оновлення кешу.</p>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-register"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Реєстрація в мережі</h3>
+        <p class="mb-16">Після того, як все зроблено та перевірено, додайте адресу вашого серверу DNS в реєстри вузлів <a class="c-3" href="https://github.com/twisterarmy/twister-core">twister-core</a> і <a class="c-3" href="https://github.com/twisterarmy/twister-seeder">twister-seeder</a>.</p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">twister-core</h4>
+        <p class="mb-16">Знайдіть у файлі <i>src/chainparams.cpp</i></p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          vSeeds.push_back(CDNSSeedData("twisterarmy.org", "seed.twisterarmy.org"));
+        </pre>
+        <p class="mb-16">Додайте</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          vSeeds.push_back(CDNSSeedData("domainseed.tk", "domainseed.tk"));
+        </pre>
+        <p class="mb-16">або</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          vSeeds.push_back(CDNSSeedData("seed.domain.org", "seed.domain.org"));
+        </pre>
+        <p class="mb-16">Сервер DNS буде доступний для користувачів twister-core тільки після оновлення програмного забезпечення до версії, що включає ці зміни.</p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">twister-seeder</h4>
+        <p class="mb-16">Знайдіть у файлі <i>main.cpp</i></p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.org",""};
+        </pre>
+        <p class="mb-16">Додайте в кінець списку адресу вашого DNS серверу</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.org","domainseed.tk",""};
+        </pre>
+        <p class="mb-16">або</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.org","seed.domain.org",""};
+        </pre>
+        <p class="mb-16">Оскільки twister-seeder також потребує ініціальних вузлів для початку сканування інших, запис DNS буде доступний для інших серверів після повторної компіляції.</p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Монітор мережі</h4>
+        <p>Для того, щоб додати новий DNS сервер до <a class="c-3" href="/uk/network.html">Мережевого монітору</a> на цьому сайті для зручного відстеження статусу, достатньо доповнити список інших провайдерів на <a class="c-3" href="https://github.com/twisterarmy/twisterarmy.github.io/blob/main/network.html">сторінці GitHub</a>.</p>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-troubleshooting"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Вирішення проблем</h3>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">DNS offline</h4>
+        <p class="mb-16">Якщо налаштований сервер не знаходить ініціальні адреси та ви бачете схоже повідомлення в журналі сканування, це означає, що жоден з інших DNS вузлів не доступний онлайн:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          0/2 available (2 tried in 333s, 0 new, 0 active), 0 banned; 31 DNS requests, 13 db queries
+        </pre>
+        <p class="mb-16">Утім, за наявності вузла twister-core, якому все ще вдається підключитись до старих адрес IP (які збережено у файлі <i>~/.twister/peers.dat</i>), є змога відновити сканування, шляхом ручного додавання адреси підключеного вузла twister-core до twister-seeder для ініціації сканування.</p>
+        <p class="mb-16">Для цього необхідно у файлі <i>main.cpp</i> знайти строку:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          CDnsSeedOpts *opts = (CDnsSeedOpts *)arg;
+        </pre>
+        <p class="mb-16">Та додати нижче код, попередньо вказавши IP та стандартний порт 28333 вузла twister-core:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          db.Add(CService("NODE_IP", 28333, true), true);
+        </pre>
+        <p class="mb-16">Після цього <a class="c-3" href="/uk/guide.html#dns-seeder-install">скомпілювати</a> та <a class="c-3" href="/uk/guide.html#dns-seeder-testing">пезапустити</a> twister-seeder знову.</p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Технічна підтримка</h4>
         <p><a class="c-3" href="https://github.com/twisterarmy/twister-seeder/issues">https://github.com/twisterarmy/twister-seeder/issues</a></p>
         <a class="position-t--48 h-32 d-block" id="contribution"></a>
         <h2 class="bb-1 b-c-0 f-size-20 pb-10 mb-16 px-12 f-normal">Контрибуція</h2>
