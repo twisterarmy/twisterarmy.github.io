@@ -69,12 +69,17 @@
           </ul>
         </li>
         <li>
-          <a class="c-0 f-size-16" href="#tools">Tools</a>
+          <a class="c-0 f-size-16" href="#dns-seeder">DNS seeder</a>
           <ul class="ml-16 my-8">
-            <li><a class="c-3" href="#tools-dns-seeder">DNS Seeder</a></li>
+            <li><a class="c-3" href="#dns-seeder-overview">Overview</a></li>
+            <li><a class="c-3" href="#dns-seeder-install">Install</a></li>
+            <li><a class="c-3" href="#dns-seeder-config">Configuration</a></li>
+            <li><a class="c-3" href="#dns-seeder-testing">Testing</a></li>
+            <li><a class="c-3" href="#dns-seeder-register">Registration</a></li>
+            <li><a class="c-3" href="#dns-seeder-troubleshooting">Troubleshooting</a></li>
           </ul>
         </li>
-        <li><a class="c-3 f-size-16" href="#contribution">Contribution</a></li>
+        <li><a class="c-0 f-size-16" href="#contribution">Contribution</a></li>
       </ul>
     </div>
     <div class="ml-240">
@@ -239,50 +244,47 @@
         <h3 class="f-size-20 mb-16 px-12 f-normal">Code examples</h3>
         <h4 class="f-size-16 mb-16 px-12 f-normal">PHP</h4>
         <p><a class="c-3" href="https://github.com/twisterarmy/cloud-server">cloud-server</a> &mdash; Multi-account instance allow users to interact with the twister network through web service.</p>
-        <a class="position-t--48 h-32 d-block" id="tools"></a>
-        <h3 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">Tools</h3>
-        <a class="position-t--48 h-32 d-block" id="tools-dns-seeder"></a>
-        <h3 class="f-size-20 mb-16 px-12 f-normal">DNS seeder</h3>
-        <p class="mb-16">Twister network requires a couple of special DNS servers (seeders) which provide an updated list of known peers. If you have a 24×7 linux machine and you are able to add an special NS record to your domain, please consider running twister-seeder.</p>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">Install</h4>
-        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+        <a class="position-t--48 h-32 d-block" id="dns-seeder"></a>
+        <h2 class="bb-1 b-c-0 f-size-20 pb-10 px-12 f-normal">DNS seeder</h2>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-overview"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Overview</h3>
+        <p>Twister network requires a couple of special DNS seeders which provide an updated list of known peers. If you have a 24×7 linux machine and you are able to add an special NS record to your domain, please consider running twister-seeder.</p>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-install"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Install</h3>
+        <p class="mb-16">At this moment, twister-seeder could be compiled from the source code:</p>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
           sudo apt install build-essential libboost-all-dev libssl-dev
           git clone https://github.com/twisterarmy/twister-seeder.git
           cd twister-seeder
           make
         </pre>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">System configuration</h4>
-        <p class="mb-16">Enable 53 port connections, if the firewall enabled. With ufw ip-tables manager, it just a simple command bellow:</p>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-config"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Configuration</h3>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">System</h4>
+        <p class="mb-16">Enable 53 port connections, if the firewall enabled. With the ufw manager for ip-tables, it is possible just by one simple command bellow:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           sudo ufw allow 53
         </pre>
-        <p class="mb-16">Ubuntu users must to free 53 port, that natively using by systemd-resolved process in <i>/etc/systemd/resolved.conf</i></p>
+        <p class="mb-16">Ubuntu users must to free 53 port, that natively using for systemd-resolved process in <i>/etc/systemd/resolved.conf</i></p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           DNSStubListener=no
         </pre>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">DNS configuration</h4>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">DNS records</h4>
+        <p class="mb-16">Usually, providers requires at least 2 NS records in the domain settings:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
-          # Usually, domain settings requires at least 2 name servers
-
           domainseed.tk  NS domaindns1.tk, domaindns2.tk
           domaindns1.tk  A Server IP
           domaindns2.tk  A Server IP
-
-
-          # Alternatively, nameservers could be registered as subdomains
-
+        </pre>
+        <p class="mb-16">On following example - DNS seeder implementation, that has name servers on itself subdomains:</p>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
           seed.domain.org NS ns1.domain.org, ns2.domain.org
           ns1.domain.org  A Server IP
           ns2.domain.org  A Server IP
         </pre>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">Running</h4>
-        <p class="mb-16">Task also could be added into crontab from root user, to launch the server on system reboot:</p>
-        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
-          @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
-        </pre>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">Testing</h4>
-        <p class="mb-16">When everything configurated properly, and DNS settings updated, your server must to be accesible in the <a class="c-3" href="/network">Twisterarmy Network Monitor</a>. Pay attention, transmitted only the nodes running on port 28333 opened, so if you want to participate the network support, open 28333 port with twister-core running.</p>
-        <p class="mb-16">Alternatively, execute following command in the terminal:</p>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-testing"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Testing</h3>
+        <p class="mb-16">If everything configurated properly, and DNS records cache has been updated, we can test DNS response with <i>host</i> tool:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           host -a domainseed.tk domaindns1.tk
 
@@ -305,11 +307,71 @@
 
           Received 99 bytes from IP#53 in 0 ms
         </pre>
-        <h4 class="f-size-16 mb-16 px-12 f-normal">Troubleshooting</h4>
+        <p class="mb-16">Run twister-seeder server by the root user:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          sudo /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
+        </pre>
+        <p class="mb-16">To launch our DNS instance on the system startup, let's update crontab settings (by root):</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
+        </pre>
+        <p>Pay attention, in the ANSWER SECTION transmitting twister-core nodes, that running on port 28333 only, so if you also want to participate DATA sharing, do not forget about opening this port on your twister-core server using <i>-port=28333</i> flag.</p>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-register"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Network registration</h3>
+        <p class="mb-16">Finally, our seeding instance should be reachable for other <a class="c-3" href="https://github.com/twisterarmy/twister-seeder">twister-seeder</a> and <a class="c-3" href="https://github.com/twisterarmy/twister-core">twister-core</a> nodes, so let's declare it in the source code of these projects.</p>
+
+        <h4 class="f-size-16 mb-16 px-12 f-normal">twister-core</h4>
+        <p class="mb-16">Find following string in the file <i>src/chainparams.cpp</i></p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          vSeeds.push_back(CDNSSeedData("twisterarmy.org", "seed.twisterarmy.org"));
+        </pre>
+        <p class="mb-16">add</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          vSeeds.push_back(CDNSSeedData("domainseed.tk", "domainseed.tk"));
+        </pre>
+        <p class="mb-16">or</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          vSeeds.push_back(CDNSSeedData("seed.domain.org", "seed.domain.org"));
+        </pre>
+        <p class="mb-16">Note, after these changes, twister-core users need to be noticed about updating their software to apply these changes. Usually, it happens on the new release announcement.</p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">twister-seeder</h4>
+        <p class="mb-16">Find following string in the file <i>main.cpp</i></p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.org",""};
+        </pre>
+        <p class="mb-16">add DNS seeder address to the end of this list:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.org","domainseed.tk",""};
+        </pre>
+        <p class="mb-16">or</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.org","seed.domain.org",""};
+        </pre>
+        <p class="mb-16">Changes will be applied on the twister-seeders recompilation.</p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Network monitor</h4>
+        <p>Add your DNS to the <a class="c-3" href="/uk/network.html">Network Monitor</a> on this website by changing providers list on <a class="c-3" href="https://github.com/twisterarmy/twisterarmy.github.io/blob/main/network.html">GitHub</a>.</p>
+        <a class="position-t--48 h-32 d-block" id="dns-seeder-troubleshooting"></a>
+        <h3 class="f-size-20 mb-16 px-12 f-normal">Troubleshooting</h3>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">DNS offline</h4>
+        <p class="mb-16">If your twister-seeder returns empty results on the network crawling, like respone on example bellow, seems that other DNS seeding instances could be offline:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          0/2 available (2 tried in 333s, 0 new, 0 active), 0 banned; 31 DNS requests, 13 db queries
+        </pre>
+        <p class="mb-16">As the solution, if you have still connected to the network twister-core instance, it is pretty possible to grab active connections from collected <i>~/.twister/peers.dat</i>. All that is needed - connecting our twister-seeder to the twister-core running, by using it IP and 28333 port.</p>
+        <p class="mb-16">Open <i>main.cpp</i> file and find a row:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          CDnsSeedOpts *opts = (CDnsSeedOpts *)arg;
+        </pre>
+        <p class="mb-16">add twister-core connection details bellow:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          db.Add(CService("NODE_IP", 28333, true), true);
+        </pre>
+        <p class="mb-16">Save and <a class="c-3" href="/uk/guide.html#dns-seeder-install">recompile</a> twister-seeder and launch it again with twister-core running.</p>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Technical support</h4>
         <p><a class="c-3" href="https://github.com/twisterarmy/twister-seeder/issues">https://github.com/twisterarmy/twister-seeder/issues</a></p>
         <a class="position-t--48 h-32 d-block" id="contribution"></a>
         <h2 class="bb-1 b-c-0 f-size-20 pb-10 mb-16 px-12 f-normal">Contribution</h2>
-        Twisterarmy is the community project. Please send your proposes and participate with improvements to development on <a class="c-3" href="https://github.com/twisterarmy">GitHub</a>.
+        <p>Twisterarmy is the community project. Please send your proposes and participate with improvements to development on <a class="c-3" href="https://github.com/twisterarmy">GitHub</a>.</p>
       </div>
     </div>
   </div>
