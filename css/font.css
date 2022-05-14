@@ -1,17 +1,17 @@
 @font-face {
   font-family: 'Roboto-Regular';
-  src: url('/font/roboto/regular.eot');
-  src: url('/font/roboto/regular.eot?#iefix') format('embedded-opentype'),
-     /*url('/font/roboto/regular.woff2') format('woff2'), @TODO */
-       url('/font/roboto/regular.woff') format('woff'),
-       url('/font/roboto/regular.ttf') format('truetype'),
-       url('/font/roboto/regular.svg#robotolight') format('svg');
+  src: url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/font/roboto/regular.eot');
+  src: url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/font/roboto/regular.eot?#iefix') format('embedded-opentype'),
+     /*url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/font/roboto/regular.woff2') format('woff2'), @TODO */
+       url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/font/roboto/regular.woff') format('woff'),
+       url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/font/roboto/regular.ttf') format('truetype'),
+       url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/font/roboto/regular.svg#robotolight') format('svg');
   font-weight: normal;
   font-style: normal
 }
 
 @font-face {
   font-family: "bootstrap-icons";
-  src: url('/font/bi/set.woff2') format('woff2'),
-       url('/font/bi/set.woff') format('woff');
+  src: url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/font/bi/set.woff2') format('woff2'),
+       url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/font/bi/set.woff') format('woff');
 }

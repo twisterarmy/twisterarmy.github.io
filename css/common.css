@@ -21,14 +21,14 @@ table {
 
 /* backgrounds */
 .bg-logo-1 {
-  background-image: url('/image/logo-1.png');
+  background-image: url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/image/logo-1.png');
   background-repeat: no-repeat;
   background-position: left 2px;
   background-size: 24px
 }
 
 .bg-logo-1:hover {
-  background-image: url('/image/logo-0.png');
+  background-image: url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/image/logo-0.png');
 }
 
 
@@ -61,11 +61,11 @@ table {
 }
 
 .bg-img-1 {
-  background-image: url('/image/bg-1.png')
+  background-image: url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/image/bg-1.png')
 }
 
 .bg-img-2 {
-  background-image: url('/image/bg-2.png')
+  background-image: url('/1PdfH9GQGT5ahR9WwYMzZCyBNdxA2pFdg7/image/bg-2.png')
 }
 
 /* fonts */
