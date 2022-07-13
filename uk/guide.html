@@ -293,15 +293,15 @@
           ns1.domain.org  A Server IP
           ns2.domain.org  A Server IP
         </pre>
+        <p class="mb-16">Автоматичний запуск DNS сурверу при старті системи, можна налаштувати за допомогою crontab, від користувача root:</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
+        </pre>
         <a class="position-t--48 h-32 d-block" id="dns-seeder-testing"></a>
         <h3 class="f-size-20 px-12 mb-16 f-normal">Тестування</h3>
         <p class="mb-16">Запуск серверу відбувається командою, що виконується від користувача root:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           sudo ./dnsseed -h domainseed.tk -n domaindns1.tk
-        </pre>
-        <p class="mb-16">Автоматичний запуск DNS сурверу при старті системи, можна налаштувати за допомогою crontab, від користувача root:</p>
-        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
-          @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
         </pre>
         <p class="mb-16">Коли записи NS створено та кеш оновлено, ви повинні отримати ризультат, схожий на цей:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">

@@ -294,15 +294,15 @@
           ns1.domain.org  A Server IP
           ns2.domain.org  A Server IP
         </pre>
+        <p class="mb-16">To launch our DNS instance on the system startup, let's update crontab settings (by root):</p>
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+          @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
+        </pre>
         <a class="position-t--48 h-32 d-block" id="dns-seeder-testing"></a>
         <h3 class="f-size-20 mb-16 px-12 f-normal">Testing</h3>
         <p class="mb-16">Run twister-seeder server by the root user:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           sudo /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
-        </pre>
-        <p class="mb-16">To launch our DNS instance on the system startup, let's update crontab settings (by root):</p>
-        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
-          @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
         </pre>
         <p class="mb-16">If everything configurated properly, and DNS records cache has been updated, we can test DNS response with <i>host</i> tool:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
