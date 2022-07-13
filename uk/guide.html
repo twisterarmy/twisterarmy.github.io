@@ -288,13 +288,13 @@
           domaindns2.tk  A Server IP
         </pre>
         <p class="mb-16">У якості альтернативного прикладу, якщо у вашому розпорядженні платний домен, та ви не бажаєте замовляти додаткові адреси, достатньо створити два піддомени та вказати в налаштуваннях NS ті, які використовуються у якості NS серверу.</p>
-        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           seed.domain.org NS ns1.domain.org, ns2.domain.org
           ns1.domain.org  A Server IP
           ns2.domain.org  A Server IP
         </pre>
         <p class="mb-16">Автоматичний запуск DNS сурверу при старті системи, можна налаштувати за допомогою crontab, від користувача root:</p>
-        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
           @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
         </pre>
         <a class="position-t--48 h-32 d-block" id="dns-seeder-testing"></a>
