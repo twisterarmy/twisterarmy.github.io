@@ -20,8 +20,4 @@
     <loc>https://twisterarmy.org/network</loc>
     <xhtml:link rel="alternate" hreflang="uk" href="https://twisterarmy.org/uk/network" />
   </url>
-  <url>
-    <loc>https://twisterarmy.org/donate</loc>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://twisterarmy.org/uk/donate" />
-  </url>
 </urlset>
