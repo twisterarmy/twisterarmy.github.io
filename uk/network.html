@@ -25,7 +25,7 @@
   <script src="/js/jquery.vmap.js"></script>
   <script src="/js/jquery.vmap.world.js"></script>
   -->
-  <script src="/js/network.js?v=3"></script>
+  <script src="/js/network.js?v=5"></script>
 </head>
 <body class="bg-c-1 bg-img-1 c-0">
   <div class="bg-c-2 bg-img-2 c-1 of-hidden position-fixed z-i-99 position-t-0 position-x-0">
@@ -150,21 +150,45 @@
         <table class="w-100-100" id="peers">
           <tr>
             <th class="t-center bb-2 b-c-6 py-16 px-8">Статус</th>
+            <th class="t-left pl-26 bb-2 b-c-6 py-16 px-8">Адреса</th>
             <th class="t-center bb-2 b-c-6 py-16 px-8">Розташування</th>
-            <th class="t-left pl-26 bb-2 b-c-6 py-16 px-8">IPv4</th>
-            <th class="t-left bb-2 b-c-6 py-16 px-8">IPv6</th>
-            <th class="t-left bb-2 b-c-6 py-16 px-8">Yggdrasil</th>
-            <th class="t-center bb-2 b-c-6 py-16 px-8">Порт TCP</th>
-            <th class="t-center bb-2 b-c-6 py-16 px-8">Порт UDP+TCP</th>
+            <th class="t-left pl-26 bb-2 b-c-6 py-16 px-8">Коментар</th>
           </tr>
-          <tr data-ipv4="94.140.114.241" data-ipv6="2a02:7aa0:4000::f2" data-yggdrasil="301:23b4:991a:634d::33">
+          <tr data-peer="94.140.114.241:28333" data-host="94.140.114.241" data-port="28333">
             <td class="t-center bb-2 b-c-6 py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">94.140.114.241:28333</td>
             <td class="t-center bb-2 b-c-6 py-16 px-8">-</td>
-            <td class="t-left pl-26 bb-2 b-c-6 p-8">94.140.114.241</td>
-            <td class="t-left bb-2 b-c-6 p-8">2a02:7aa0:4000::f2</td>
-            <td class="t-left bb-2 b-c-6 p-8">301:23b4:991a:634d::33</td>
-            <td class="t-center bb-2 b-c-6 p-8">28333</td>
-            <td class="t-center bb-2 b-c-6 p-8">29333</td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">Інтернет / TCP</td>
+          </tr>
+          <tr data-peer="94.140.114.241:28333" data-host="94.140.114.241" data-port="29333">
+            <td class="t-center bb-2 b-c-6 py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">94.140.114.241:29333</td>
+            <td class="t-center bb-2 b-c-6 py-16 px-8">-</td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">Інтернет / UDP+TCP</td>
+          </tr>
+          <tr data-peer="[2a02:7aa0:4000::f2]:28333" data-host="2a02:7aa0:4000::f2" data-port="28333">
+            <td class="t-center bb-2 b-c-6 py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">[2a02:7aa0:4000::f2]:28333</td>
+            <td class="t-center bb-2 b-c-6 py-16 px-8">-</td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">Інтернет / TCP</td>
+          </tr>
+          <tr data-peer="[2a02:7aa0:4000::f2]:29333" data-host="2a02:7aa0:4000::f2" data-port="29333">
+            <td class="t-center bb-2 b-c-6 py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">[2a02:7aa0:4000::f2]:29333</td>
+            <td class="t-center bb-2 b-c-6 py-16 px-8">-</td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">Інтернет / UDP+TCP</td>
+          </tr>
+          <tr data-peer="[301:23b4:991a:634d::33]:28333" data-host="301:23b4:991a:634d::33" data-port="28333">
+            <td class="t-center bb-2 b-c-6 py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">[301:23b4:991a:634d::33]:28333</td>
+            <td class="t-center bb-2 b-c-6 py-16 px-8">-</td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">Yggdrasil / TCP</td>
+          </tr>
+          <tr data-peer="[301:23b4:991a:634d::33]:29333" data-host="301:23b4:991a:634d::33" data-port="29333">
+            <td class="t-center bb-2 b-c-6 py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">[301:23b4:991a:634d::33]:29333</td>
+            <td class="t-center bb-2 b-c-6 py-16 px-8">-</td>
+            <td class="t-left pl-26 bb-2 b-c-6 p-8">Yggdrasil / UDP+TCP</td>
           </tr>
         </table>
       </div>

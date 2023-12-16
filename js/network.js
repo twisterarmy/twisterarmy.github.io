@@ -1,53 +1,35 @@
-function peerLookupYggdrasil(element) {
+function peerLookup(element) {
+
+  var host = $(element).data('host');
+  var port = $(element).data('port');
 
   // Get online status
-  // @TODO
-
-  // If provided, set special status
-  if ($(element).data('yggdrasil').length > 0) {
-
-    $(element).children('td:eq(0)').find('i').removeClass('c-5');
-    $(element).children('td:eq(0)').find('i').addClass('c-6');
-  }
-}
-
-function peerLookupIpv6(element) {
-
-  // Get online status
-  // @TODO
-
-  // Get country
   $.ajax({
     type: 'GET',
-    url: 'https://ipapi.co/' + $(element).data('ipv4') + '/json',
+    url: 'https://api.twisterarmy.dedyn.io/socket.php?host=' + host + '&port=' + port,
     dataType: 'json',
     success: function (result) {
 
-      if (result.country_code && result.country_code != '' && result.country_code != 'undefined') {
+      if (result.success) {
 
-        // Set country
-        $(element).children('td:eq(1)').text(result.country_code);
+        // Set online
+        $(element).children('td:eq(0)').find('i').removeClass('c-5');
+        $(element).children('td:eq(0)').find('i').addClass('c-7');
       }
     }
   });
-}
-
-function peerLookupIpv4(element) {
-
-  // Get online status
-  // @TODO
 
   // Get country
   $.ajax({
     type: 'GET',
-    url: 'https://ipapi.co/' + $(element).data('ipv4') + '/json',
+    url: 'https://ipapi.co/' + host + '/json',
     dataType: 'json',
     success: function (result) {
 
       if (result.country_code && result.country_code != '' && result.country_code != 'undefined') {
 
         // Set country
-        $(element).children('td:eq(1)').text(result.country_code);
+        $(element).children('td:eq(2)').text(result.country_code);
       }
     }
   });
@@ -107,16 +89,8 @@ $(document).ready(function() {
   });
 
   // Check peers
-  $('#peers tr[data-yggdrasil]').each(function() {
-    peerLookupYggdrasil(this);
-  });
-
-  $('#peers tr[data-ipv6]').each(function() {
-    peerLookupIpv6(this);
-  });
-
-  $('#peers tr[data-ipv4]').each(function() {
-    peerLookupIpv4(this);
+  $('#peers tr[data-peer]').each(function() {
+    peerLookup(this);
   });
 
   /*
