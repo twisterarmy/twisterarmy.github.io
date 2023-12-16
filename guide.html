@@ -295,7 +295,31 @@
         </pre>
         <p class="mb-16">To launch our DNS instance on the system startup, let's update crontab settings (by root):</p>
         <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
-          @reboot /path-to/dnsseed -h domainseed.tk -n domaindns1.tk
+          @reboot /path-to/twister-seeder/dnsseed -h seed.domain.org -n ns1.domain.org  > /dev/null 2>&1
+        </pre>
+        <p class="mb-16">Alternatively, systemd users may create the service:</p>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+          # /etc/systemd/system/twister-seeder.service
+
+          [Unit]
+          Description=Twister DNS Seed
+          After=network.target
+
+          [Service]
+          Type=simple
+          ExecStart=/path-to/twister-seeder/dnsseed -h seed.domain.org -n ns1.domain.org
+          StandardOutput=null
+          StandardError=file:/path-to/twister-seeder-errors.log
+          Restart=on-failure
+
+          [Install]
+          WantedBy=multi-user.target
+        </pre>
+        <p class="mb-16">Then restart configuration, enable service to system auto-start, and launch</p>
+        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+          systemctl daemon-reload
+          systemctl enable twister-seeder
+          systemctl start twister-seeder
         </pre>
         <a class="position-t--48 h-32 d-block" id="dns-seeder-testing"></a>
         <h3 class="f-size-20 mb-16 px-12 f-normal">Testing</h3>
@@ -334,9 +358,9 @@
         <h4 class="f-size-16 mb-16 px-12 f-normal">twister-core</h4>
         <p class="mb-16">Find following string in the file <i>src/chainparams.cpp</i></p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
-          vSeeds.push_back(CDNSSeedData("twisterarmy.dedyn.io", "seed.twisterarmy.dedyn.io"));
+          vSeeds.push_back(CDNSSeedData("twister.net.co", "seed.twister.net.co"));
         </pre>
-        <p class="mb-16">add</p>
+        <p class="mb-16">add after</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           vSeeds.push_back(CDNSSeedData("domainseed.tk", "domainseed.tk"));
         </pre>
@@ -348,15 +372,15 @@
         <h4 class="f-size-16 mb-16 px-12 f-normal">twister-seeder</h4>
         <p class="mb-16">Find following string in the file <i>main.cpp</i></p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
-          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.dedyn.io",""};
+          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.domain.org",""};
         </pre>
         <p class="mb-16">add DNS seeder address to the end of this list:</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
-          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.dedyn.io","domainseed.tk",""};
+          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.domain.org","domainseed.tk",""};
         </pre>
         <p class="mb-16">or</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
-          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.twisterarmy.dedyn.io","seed.domain.org",""};
+          static const string mainnet_seeds[] = {"seed.twister.net.co","seed2.twister.net.co","seed3.twister.net.co","twisterseed.tk","twisterarmyseed.tk","seed.domain.org","seed.domain.org",""};
         </pre>
         <p class="mb-16">Changes will be applied on the twister-seeders recompilation.</p>
         <h4 class="f-size-16 mb-16 px-12 f-normal">Network monitor</h4>
