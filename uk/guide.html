@@ -293,11 +293,11 @@
           ns2.domain.org  A Server IP
         </pre>
         <p class="mb-16">Автоматичний запуск DNS сурверу при старті системи, можна налаштувати за допомогою crontab, від користувача root:</p>
-        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           @reboot /path-to/twister-seeder/dnsseed -h seed.domain.org -n ns1.domain.org  > /dev/null 2>&1
         </pre>
         <p class="mb-16">Користувачі systemd можуть створити окремий сервіс:</p>
-        <pre class="mx-auto pt-16 bg-c-4 b-r-3 o-x">
+        <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           # /etc/systemd/system/twister-seeder.service
 
           [Unit]
