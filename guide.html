@@ -293,6 +293,7 @@
           ns1.domain.org  A Server IP
           ns2.domain.org  A Server IP
         </pre>
+        <h4 class="f-size-16 mb-16 px-12 f-normal">Launch</h4>
         <p class="mb-16">To launch our DNS instance on the system startup, let's update crontab settings (by root):</p>
         <pre class="mx-auto pt-16 mb-16 bg-c-4 b-r-3 o-x">
           @reboot /path-to/twister-seeder/dnsseed -h seed.domain.org -n ns1.domain.org  > /dev/null 2>&1
