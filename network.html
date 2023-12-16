@@ -24,7 +24,7 @@
   <script src="/js/jquery.vmap.js"></script>
   <script src="/js/jquery.vmap.world.js"></script>
   -->
-  <script src="/js/network.js?v=3"></script>
+  <script src="/js/network.js?v=4"></script>
 </head>
 <body class="bg-c-1 bg-img-1 c-0">
   <div class="bg-c-2 bg-img-2 c-1 of-hidden position-fixed z-i-99 position-t-0 position-x-0">
@@ -59,13 +59,13 @@
       <h1 class="f-size-26 mt-96 mb-48 pb-36 pt-16 t-center f-normal bb-1-2 b-c-0">Network Monitor</h1>
       <!--<h2 class="f-size-20 mt-48 pb-10 f-normal t-center">DNS</h2>-->
       <div class="mx-auto mt-20 bg-c-4 b-r-3">
-        <table class="w-100-100">
+        <table class="w-100-100" id="dns">
           <tr>
             <th class="t-center bb-2 b-c-6 py-16 px-8">Status</th>
-            <th class="t-left pl-26 bb-2 b-c-6 py-16 px-8">DNS Server</th>
+            <th class="t-left pl-26 bb-2 b-c-6 py-16 px-8">DNS</th>
             <th class="t-center bb-2 b-c-6 py-16 px-8">Nodes</th>
             <th class="t-center bb-2 b-c-6 py-16 px-8">Location</th>
-            <th class="t-left bb-2 b-c-6 py-16 px-8">Twister compatibility</th>
+            <th class="t-left bb-2 b-c-6 py-16 px-8">Compatibility</th>
           </tr>
           <tr data-host="seed.twister.net.co">
             <td class="t-center bb-2 b-c-6 py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
@@ -123,6 +123,13 @@
             <td class="t-center bb-2 b-c-6 p-8">-</td>
             <td class="t-left bb-2 b-c-6 p-8">[Official, TA Edition] Mar 20, 2021 and later</td>
           </tr>
+          <tr data-host="seed.twisterarmy.dedyn.io">
+            <td class="t-center bb-2 b-c-6 py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
+            <td class="t-left bb-2 b-c-6 pl-26 p-8">seed.twisterarmy.dedyn.io</td>
+            <td class="t-center bb-2 b-c-6 p-8">-</td>
+            <td class="t-center bb-2 b-c-6 p-8">-</td>
+            <td class="t-left bb-2 b-c-6 p-8">[TA Edition] Dec 15, 2023</td>
+          </tr>
         </table>
       </div>
       <!--
@@ -139,27 +146,30 @@
       <a name="peers"></a>
       <h2 class="f-size-26 mb-48 pb-36 pt-16 t-center f-normal bb-1-2 b-c-0">Peers</h2>
       <div class="mx-auto mt-20 bg-c-4 b-r-3">
-        <table class="w-100-100">
+        <table class="w-100-100" id="peers">
           <tr>
-            <th class="t-left bb-2 b-c-6 py-16 px-8">Location</th>
+            <th class="t-center bb-2 b-c-6 py-16 px-8">Status</th>
+            <th class="t-center bb-2 b-c-6 py-16 px-8">Location</th>
             <th class="t-left pl-26 bb-2 b-c-6 py-16 px-8">IPv4</th>
             <th class="t-left bb-2 b-c-6 py-16 px-8">IPv6</th>
             <th class="t-left bb-2 b-c-6 py-16 px-8">Yggdrasil</th>
             <th class="t-center bb-2 b-c-6 py-16 px-8">Port TCP</th>
             <th class="t-center bb-2 b-c-6 py-16 px-8">Port UDP+TCP</th>
           </tr>
-          <tr>
-            <td class="t-left bb-2 b-c-6 py-16 px-8">Latvia</td>
+          <tr data-ipv4="94.140.114.241" data-ipv6="2a02:7aa0:4000::f2" data-yggdrasil="301:23b4:991a:634d::33">
+            <td class="t-center bb-2 b-c-6 py-16 px-8"><i class="bi-circle-fill mr-6 f-size-10 p-16 c-5"></i></td>
+            <td class="t-center bb-2 b-c-6 py-16 px-8">-</td>
             <td class="t-left pl-26 bb-2 b-c-6 p-8">94.140.114.241</td>
             <td class="t-left bb-2 b-c-6 p-8">2a02:7aa0:4000::f2</td>
-            <td class="t-left bb-2 b-c-6 p-8">201:23b4:991a:634d:8359:4521:5576:15b7</td>
+            <td class="t-left bb-2 b-c-6 p-8">301:23b4:991a:634d::33</td>
             <td class="t-center bb-2 b-c-6 p-8">28333</td>
             <td class="t-center bb-2 b-c-6 p-8">29333</td>
           </tr>
         </table>
       </div>
       <div class="t-center my-36">
-        <small>* connect to peer manually without DNS</small>
+        <p><small>* connect to peer manually without DNS</small></p>
+        <p><small>** IPv6 support enabled in <a href="https://github.com/twisterarmy/twister-core" class="c-1">twister-core TA Edition</a></small></p>
       </div>
       <div class="t-center my-36">
         <a href="https://github.com/twisterarmy/twisterarmy.github.io/blob/main/network.html" class="c-1">Add peer</a>

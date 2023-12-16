@@ -14,4 +14,4 @@ function nsLookup(host) {
   });
 }
 
-nsLookup('cs1.twisterarmy.org');
+nsLookup('cs1.twisterarmy.dedyn.io');
