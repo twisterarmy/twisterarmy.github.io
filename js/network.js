@@ -6,7 +6,7 @@ function peerLookup(element) {
   // Get online status
   $.ajax({
     type: 'GET',
-    url: 'https://api.twisterarmy.dedyn.io/socket.php?host=' + host + '&port=' + port,
+    url: 'https://yggapi.duckdns.org/net/socket.php?host=' + host + '&port=' + port,
     dataType: 'json',
     success: function (result) {
 
