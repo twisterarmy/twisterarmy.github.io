@@ -289,22 +289,47 @@
 </li>
 <li>Launch twister
 <ul>
-<li><code>./twisterd</code></li>
-<li>open <a href="http://127.0.0.1:28332">http://127.0.0.1:28332</a>
+<li>
+<p><code>./twisterd</code></p>
+</li>
+<li>
+<p>open <a href="http://127.0.0.1:28332">http://127.0.0.1:28332</a></p>
 <ul>
 <li>enter <code>user</code> and <code>pwd</code> in the authorization dialog</li>
 </ul>
 </li>
-<li>create your account!</li>
+<li>
+<p>create your account!</p>
+</li>
+<li>
+<p>Setup systemd service by pasting following text into the file <code>/etc/systemd/system/twister-core.service</code></p>
+</li>
 </ul>
 </li>
 </ol>
+<pre><code>[Unit]
+After=network.target
+
+[Service]
+Type=simple
+User=twister
+Group=twister
+ExecStart=/home/twister/twister-core/twisterd -port=28333 -rpcuser=user -rpcpassword=pwd -rpcallowip=127.0.0.1
+StandardOutput=null
+StandardError=file:/home/twister/twister-core/twister-core-errors.log
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Inside that file, check/replace usernames, paths and <code>pwd</code>. Then enable and start the service:</p>
+<p><code>systemctl daemon-reload; systemctl enable twister-core; systemctl start twister-core; systemctl status twister-core</code></p>
 <h3 id="upgrade-from-repository"><a class="header" href="#upgrade-from-repository">Upgrade from repository</a></h3>
 <p>Steps to upgrade your existing <code>twister-core</code> and <code>twister-html</code> from the repository sources:</p>
 <ol>
 <li>stop running <code>twisterd</code> process to continue (if active, run <code>pgrep twisterd</code> to find)
 <ul>
-<li><code>sudo systemctl stop twister-service-name</code> - if you're using <code>systemd</code> service</li>
+<li><code>sudo systemctl stop twister-core</code> - if you're using <code>systemd</code> service</li>
 </ul>
 </li>
 <li><code>cd twister-core</code> - navigate <code>twister-core</code> sources directory (which contains old <code>twisterd</code> binary)</li>
@@ -314,7 +339,7 @@
 <li><code>git pull</code> - grab latest <code>twister-html</code> changes</li>
 <li>start <code>twister-core</code> process
 <ul>
-<li><code>sudo systemctl start twister-service-name</code> - if you're using <code>systemd</code> service</li>
+<li><code>sudo systemctl start twister-core</code> - if you're using <code>systemd</code> service</li>
 </ul>
 </li>
 </ol>
