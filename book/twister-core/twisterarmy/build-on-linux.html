@@ -282,7 +282,11 @@
 <li>Setup <a href="https://github.com/twisterarmy/twister-html">twister-html</a> (web UI)
 <ul>
 <li><code>mkdir ~/.twister</code></li>
-<li><code>echo -e "rpcuser=user\nrpcpassword=pwd\nrpcallowip=127.0.0.1" &gt; ~/.twister/twister.conf</code></li>
+<li><code>echo -e "rpcuser=user\nrpcpassword=pwd\nrpcallowip=127.0.0.1" &gt; ~/.twister/twister.conf</code>
+<ul>
+<li>use <code>-rpcallowip=*</code> mask if you want to connect remotely with a dynamic IP address, but make sure you have provided strong credentials along with an SSL certificate (see the <strong>Remote Node</strong> page for more details)</li>
+</ul>
+</li>
 <li><code>chmod 600 ~/.twister/twister.conf</code></li>
 <li><code>git clone https://github.com/twisterarmy/twister-html.git ~/.twister/html</code></li>
 </ul>
@@ -308,7 +312,7 @@ After=network.target
 Type=simple
 User=twister
 Group=twister
-ExecStart=/home/twister/twister-core/twisterd
+ExecStart=/home/twister/twister-core/twisterd -printtoconsole
 StandardOutput=null
 StandardError=file:/home/twister/twister-core-errors.log
 Restart=on-failure
@@ -316,16 +320,24 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 </code></pre>
+<div class="mdbook-alerts mdbook-alerts-note">
+<p class="mdbook-alerts-title">
+  <span class="mdbook-alerts-icon"></span>
+  note
+</p>
 <ul>
-<li>append <code>-port=28333</code> to <code>ExecStart</code> if you're running the node as a public peer and <code>-rpcallowip=*</code> if you need to access node WebUI (:28332) from a remote computer. Note that the previously created <code>/home/twister/.twister/twister.conf</code> file should contain unique and safe password.</li>
+<li>The <code>ExecStart</code> command contains the <code>-printtoconsole</code> option, which routes the debug output to <code>StandardOutput</code> instead of the <code>debug.log</code> file, then disables it by setting to the <code>null</code> value</li>
+<li>The example above requires a previously created <code>twister.conf</code> file that contains RPC credentials defined in the previous steps. Alternatively, you may forcefully overwrite them by using the custom <code>-rpcuser</code>, <code>-rpcpassword</code>, and <code>-rpcallowip</code> arguments (see <code>./twisterd --help</code> for more details)</li>
+<li>Support the network by open port <code>28333</code> and append <code>-port=28333</code> to <code>ExecStart</code> if you're running the node as a public peer</li>
 </ul>
+</div>
 <p>Then enable and start the service:</p>
-<ul>
+<ol>
 <li><code>systemctl daemon-reload</code></li>
 <li><code>systemctl enable twister-core</code></li>
 <li><code>systemctl start twister-core</code></li>
 <li><code>systemctl status twister-core</code></li>
-</ul>
+</ol>
 <h3 id="upgrade-from-repository"><a class="header" href="#upgrade-from-repository">Upgrade from repository</a></h3>
 <p>Steps to upgrade your existing <code>twister-core</code> and <code>twister-html</code> from the repository sources:</p>
 <ol>
